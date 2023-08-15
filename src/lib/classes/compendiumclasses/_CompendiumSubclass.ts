@@ -1,4 +1,4 @@
-import type CompendiumObject from "./_CompendiumObject"
+import type CompendiumObject from "./_CompendiumStore"
 
 export default interface CompendiumSubclass extends CompendiumObject {
     flavour: string,

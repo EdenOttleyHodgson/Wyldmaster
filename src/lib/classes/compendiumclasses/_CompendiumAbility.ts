@@ -1,6 +1,6 @@
-import type CompendiumObject from "./_CompendiumObject";
+import type CompendiumObject from "./_CompendiumStore";
 
-export default interface CompendiumAbility extends CompendiumObject{
+export default class CompendiumAbility extends CompendiumObject{
     effect: string,
     actions: string[],
     source: string
