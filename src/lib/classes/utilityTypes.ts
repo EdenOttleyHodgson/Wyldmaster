@@ -1,1 +1,8 @@
-export type CompendiumType = "ACTIONS"|"BASECLASSES"|"COMBATGEAR"|"EXCURSIONEQUIPMENT"|"TAGS"|"SUBCLASSES"|"ABILITIES"
+export type CompendiumType = 
+    "ACTIONS"
+    |"BASECLASSES"
+    |"COMBATGEAR"
+    |"EXCURSIONEQUIPMENT"
+    |"TAGS"
+    |"SUBCLASSES"
+    |"ABILITIES"

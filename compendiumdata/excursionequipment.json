@@ -4,6 +4,9 @@
         "effect": "Grants the Use Antivenom Action",
         "weight": 1,
         "actions": ["core.actions.useantivenom"],
-        "source": "universal"
+        "source": {
+            "id":"universal",
+            "SourceType":"universal"
+        }
     }
 ]

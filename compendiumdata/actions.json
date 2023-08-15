@@ -6,7 +6,10 @@
         "effect": "Move into an Adjacent Section",
         "apcost": 1,
         "tags": [],
-        "source": "universal"
+        "source": {
+            "id": "universal", 
+            "SourceType":"universal"
+        }      
     },
     {
         "id": "core.action.recover",
@@ -15,7 +18,10 @@
         "effect": "Regain 1 Stamina and Cleanse Fatigued",
         "apcost": 1,
         "tags": [],
-        "source": "universal"
+        "source": {
+            "id": "universal", 
+            "SourceType":"universal"
+        }      
     },
     {
         "id": "core.action.useantivenom",
@@ -24,7 +30,10 @@
         "effect": "This action can only be taken after using the Cleanse Self action. Cleanse Poisoned",
         "apcost": 0,
         "tags": [],
-        "source": "core.excursionequipment.antivenom"   
+        "source": {
+            "id": "core.excursionequipment.antivenom", 
+            "SourceType":"EXCURSIONEQUIPMENT"
+        }   
     },
     {
         "id": "core.action.valiantroar",
@@ -33,7 +42,10 @@
         "effect": "All characters currently interdicted by you have +1 difficulty on their next check to reposition.",
         "apcost": 1,
         "tags": [],
-        "source": "core.abilities.valiantroar"
+        "source": {
+            "id": "core.subclasses.valiantroar", 
+            "SourceType":"SUBCLASS"
+        }
     }, 
     {
         "id": "core.action.standfast",
@@ -42,7 +54,10 @@
         "effect": "Until the end of your next turn, enemies within the same section can only make attacks against you. Additionally when you use this ability you restore X Stamina",
         "apcost": 3,
         "tags": ["core.tags.feat"],
-        "source": "core.abilities.standfast"
+        "source": {
+            "id": "core.subclasses.standfast", 
+            "SourceType":"SUBCLASS"
+        }
     }
 
 ]

@@ -1,10 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import type { CompendiumType } from "$lib/classes/utilityTypes";
-    import { load_compendium_data } from "./compendiumloader";
+    import { getCompendium } from "./compendiumloader";
     export let compendiumType: CompendiumType 
+    let compendium;
     const loadContent = async function(){
-        await load_compendium_data()
+        compendium = await getCompendium();
+        console.log(compendium)
         switch(compendiumType){
             case "ACTIONS":
                 console.log("Loading Actions")

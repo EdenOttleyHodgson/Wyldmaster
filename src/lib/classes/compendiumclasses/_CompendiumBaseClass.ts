@@ -1,6 +1,6 @@
-import type CompendiumObject from "./_CompendiumStore"
+import { CompendiumStore, type CompendiumObject }from "./_CompendiumStore"
 
-export default interface CompendiumBaseClass extends CompendiumObject{
+export interface CompendiumBaseClass extends CompendiumObject{
     description: string,
     stats: {
         stamina: number,
@@ -10,5 +10,14 @@ export default interface CompendiumBaseClass extends CompendiumObject{
         dodge: number,
         resilience: number,
         magicdef: number
+    }
+}
+
+export class CompendiumBaseClassStore extends CompendiumStore{
+    constructor(items: CompendiumBaseClass[]) {
+        super(items)
+    }
+    getItem(itemID: string): CompendiumBaseClass | undefined {
+        return super.getItem(itemID) as CompendiumBaseClass | undefined
     }
 }
