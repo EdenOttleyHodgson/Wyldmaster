@@ -1,0 +1,32 @@
+[
+    {
+        "id": "core.subclasses.wall",
+        "name": "The Wall",
+        "flavour": "The Immovable Object",
+        "description": "The tank",
+        "baseclass": "core.baseclasses.bulwark",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.steelwall",
+                "name": "Steel Wall"
+            }, 
+            {
+                "level": 2,
+                "id": "core.abilities.valiantroar",
+                "name": "Valiant Roar"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.shieldbond",
+                "name": "Shield Bond"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.standfast",
+                "name": "Stand Fast"
+            }
+
+        ]
+    }
+]

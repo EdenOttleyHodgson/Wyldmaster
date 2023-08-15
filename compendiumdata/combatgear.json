@@ -1,0 +1,45 @@
+[
+    {
+        "id": "core.combatgear.knife",
+        "name": "Knife",
+        "stats": {
+            "damage": [1],
+            "weight": 1,
+            "apcost":[1]
+        },
+        "tags": ["core.tags.onehanded", "core.tags.fast", "core.tags.weak", "core.tags.meleeweapon"]
+    },
+    {
+        "id": "core.combatgear.shortsword",
+        "name": "Shortsword",
+        "stats": {
+            "damage": [2, 3],
+            "weight": 2,
+            "apcost":[1, 2]
+        },
+        "tags": ["core.tags.onehanded", "core.tags.versatile", "core.tags.engaging", "core.tags.meleeweapon"]
+    },
+    {
+        "id": "core.combatgear.longbow",
+        "name": "Longbow",
+        "stats": {
+            "range": "Long",
+            "damage": [3],
+            "weight": 3,
+            "apcost": 2
+        },
+        "tags": ["core.tags.unwieldy", "core.tags.rangedweapon"]
+    },
+    {
+        "id": "core.combatgear.leatherarmour",
+        "name": "Leather Armour",
+        "stats": {
+            "weight": 1,
+            "resilience": 1,
+            "dodge": 3,
+            "staminareduction": 0
+        },
+        "tags": ["core.tags.nimble"]
+    }
+
+]

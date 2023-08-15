@@ -1,0 +1,32 @@
+[
+    {
+        "id": "core.baseclasses.bulwark",
+        "name": "The Bulwark",
+        "description": "",
+        "stats": {
+            "stamina": 8,
+            "meleeprof": 2,
+            "rangedprof": 0,
+            "magicprof": 0,
+            "dodge": 10,
+            "resilience": 14,
+            "magicdef": 12
+        }
+    },
+    {
+        "id": "core.baseclasses.knave",
+        "name": "The Knave",
+        "description": "",
+        "stats": {
+            "stamina": 6,
+            "meleeprof": 3,
+            "rangedprof": 0,
+            "magicprof": 0,
+            "dodge": 14,
+            "resilience": 8,
+            "magicdef": 12
+        }
+    }
+
+
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "id": "core.tags.feat",
+        "name": "Feat",
+        "description": "DONT FORGETFeat Rules!",
+        "value": false
+    },
+    {
+        "id": "core.tags.unwieldy",
+        "name": "Unwieldy",
+        "description": "Attacks with this weapon have +1 difficulty while you are under the effects of the Interdict action. If the character using the Interdict action has the Engaging effect, attacks cannot be made with this weapon.",
+        "value": false
+    },
+        {
+        "id": "core.tags.onehanded",
+        "name": "One Handed",
+        "description": "This weapon must be wielded in one hand.",
+        "value": false
+    }, 
+    {
+        "id": "core.tags.fast",
+        "name": "Fast",
+        "description":  "This weapon gains +1 accuracy to hit characters who are not Fatigued.",
+        "value": false
+    },     
+    {
+        "id": "core.tags.weak",
+        "name": "Weak",
+        "description": "This weapon has +1 difficulty against characters who are Fatigued.",
+        "value": false
+    },
+    {
+        "id": "core.tags.meleeweapon",
+        "name": "Melee Weapon",
+        "description": "Weapon attacks using this weapon use melee proficiency.",
+        "value": false
+    },
+    {
+        "id": "core.tags.versatile",
+        "name": "Versatile",
+        "description": "These weapons have 2 different AP costs and 2 different damage values. The user decides which AP cost and corresponding damage value to use. ",
+        "value": true
+    },   
+    {
+        "id": "core.tags.engaging",
+        "name": "Engaging",
+        "description": "Having this weapon equipped grants characters the Engaging effect.",
+        "value": false 
+    },   
+    {
+        "id": "core.tags.rangedweapon",
+        "name": "Ranged Weapon",
+        "description": "Weapon attacks using this weapon use ranged efficiency.",
+        "value": null
+    },   
+    {
+        "id": "core.tags.nimble",
+        "name": "Nimble",
+        "description": "not done yet",
+        "value": null
+    }
+]
