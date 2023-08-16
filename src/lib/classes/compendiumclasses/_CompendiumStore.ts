@@ -11,13 +11,16 @@ export interface Source{
     SourceType: CompendiumType | "UNIVERSAL"
 }
 
-export abstract class CompendiumStore{
-    items: CompendiumObject[];
-    constructor(items: CompendiumObject[]){
-        this.items = items
 
+
+export class CompendiumStore<T extends CompendiumObject> {
+    items: T[]
+    constructor(items: T[]) {
+        this.items = items;
     }
-    getItem(itemID: string): CompendiumObject | undefined{
-       return this.items.find((x) => {x.id === itemID})
-    } 
+    getItem(itemID: string): T | undefined {
+        return this.items.find((x) => x.id === itemID)
+    }
+    
+
 }

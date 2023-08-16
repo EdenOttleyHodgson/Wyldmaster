@@ -1,4 +1,4 @@
-import {CompendiumStore, type CompendiumObject }from "./_CompendiumStore";
+import type { CompendiumObject } from "./_CompendiumStore";
 
 export interface CompendiumAbility extends CompendiumObject{
     effect: string,
@@ -6,12 +6,3 @@ export interface CompendiumAbility extends CompendiumObject{
     source: string
 }
 
-export class CompendiumAbilityStore extends CompendiumStore {
-    constructor(items: CompendiumAbility[]){
-        super(items)
-    }
-
-    getItem(itemID: string): CompendiumAbility | undefined{
-        return super.getItem(itemID) as CompendiumAbility | undefined
-    }
-}

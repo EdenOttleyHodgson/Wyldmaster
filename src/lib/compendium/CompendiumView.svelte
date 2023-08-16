@@ -1,9 +1,11 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import type { CompendiumType } from "$lib/classes/utilityTypes";
-    import { getCompendium } from "./compendiumloader";
+    import { Compendium, getCompendium } from "./compendiumloader";
+    import type { CompendiumObject } from "$lib/classes/compendiumclasses";
     export let compendiumType: CompendiumType 
-    let compendium;
+    let compendium: Compendium;
+    let currentItems: CompendiumObject[]
     const loadContent = async function(){
         compendium = await getCompendium();
         console.log(compendium)
