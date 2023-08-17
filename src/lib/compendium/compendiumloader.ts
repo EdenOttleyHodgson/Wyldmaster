@@ -1,6 +1,6 @@
 import { invoke } from "@tauri-apps/api/tauri"
-import type { CompendiumType } from "$lib/classes/utilityTypes"
-import { type CompendiumBaseClass, type CompendiumExcursionEquipment,  type CompendiumCombatGear,  type CompendiumTag,  type CompendiumAbility,  type CompendiumSubclass, type CompendiumAction, CompendiumStore } from "$lib/classes/compendiumclasses"
+import type { CompendiumType } from "$lib/compendium/CompendiumType"
+import { type CompendiumBaseClass, type CompendiumExcursionEquipment,  type CompendiumCombatGear,  type CompendiumTag,  type CompendiumAbility,  type CompendiumSubclass, type CompendiumAction, CompendiumStore, type CompendiumObject } from "$lib/classes/compendiumclasses"
 let compendium: Compendium
 export class Compendium{
     actionStore!: CompendiumStore<CompendiumAction>
@@ -39,6 +39,49 @@ export class Compendium{
         )
             console.log("Compendium Initialized")
     }
+    getGenericItem(itemID: string, compType: CompendiumType): CompendiumObject | undefined{
+    try {
+        console.log(compType)
+         switch(compType) {
+            case "ACTIONS":
+                return this.actionStore.getItem(itemID)
+            case "BASECLASSES":
+                return this.baseClassStore.getItem(itemID)
+            case "COMBATGEAR":
+                return this.combatGearStore.getItem(itemID) 
+            case "EXCURSIONEQUIPMENT":
+                return this.excursionEquipmentStore.getItem(itemID) 
+            case "TAGS":
+                return this.tagStore.getItem(itemID) 
+            case "SUBCLASSES":
+                return this.subclassStore.getItem(itemID) 
+            case "ABILITIES":
+                return this.abilityStore.getItem(itemID) 
+        }
+    } catch (error) {
+       console.error(error + "\n compType did not correspond to T")
+       return undefined 
+    }    
+    }
+    getCoercedItemFunc<T extends CompendiumObject>(compType: CompendiumType): ((id: string) => T | undefined)  {
+        switch(compType) {
+            case "ACTIONS":
+                return this.actionStore.getItem as (id: string) => T |undefined
+            case "BASECLASSES":
+                return this.baseClassStore.getItem as (id: string) => T |undefined
+            case "COMBATGEAR":
+                return this.combatGearStore.getItem as (id: string) => T |undefined 
+            case "EXCURSIONEQUIPMENT":
+                return this.excursionEquipmentStore.getItem as (id: string) => T |undefined 
+            case "TAGS":
+                return this.tagStore.getItem as (id: string) => T |undefined 
+            case "SUBCLASSES":
+                return this.subclassStore.getItem as (id: string) => T |undefined
+            case "ABILITIES":
+                return this.abilityStore.getItem as (id: string) => T |undefined 
+        }
+
+    } 
 }    
 
 export async function getCompendium(){

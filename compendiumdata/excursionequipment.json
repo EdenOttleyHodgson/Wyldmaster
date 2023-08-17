@@ -1,6 +1,7 @@
 [
     {
         "id": "core.excursionequipment.antivenom",
+        "name": "Antivenom",
         "effect": "Grants the Use Antivenom Action",
         "weight": 1,
         "actions": ["core.actions.useantivenom"],

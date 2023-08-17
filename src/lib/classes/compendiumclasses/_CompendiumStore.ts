@@ -1,4 +1,4 @@
-import type { CompendiumType } from "../utilityTypes";
+import type { CompendiumType } from "../../compendium/CompendiumType";
 
 export interface CompendiumObject{
     id: string,
@@ -8,7 +8,7 @@ export interface CompendiumObject{
 
 export interface Source{
     id: string,
-    SourceType: CompendiumType | "UNIVERSAL"
+    sourceType: CompendiumType | "UNIVERSAL"
 }
 
 
@@ -21,6 +21,6 @@ export class CompendiumStore<T extends CompendiumObject> {
     getItem(itemID: string): T | undefined {
         return this.items.find((x) => x.id === itemID)
     }
-    
+
 
 }

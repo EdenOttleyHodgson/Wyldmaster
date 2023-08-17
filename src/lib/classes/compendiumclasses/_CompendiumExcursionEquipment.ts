@@ -4,6 +4,7 @@ import type { Compendium } from "$lib/compendium/compendiumloader"
 
 export  interface CompendiumExcursionEquipment extends CompendiumObject{
     weight: number,
-    actions: string[]
-    source: Source
+    actions: string[],
+    source: Source,
+    effect: string
 }

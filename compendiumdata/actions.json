@@ -8,7 +8,7 @@
         "tags": [],
         "source": {
             "id": "universal", 
-            "SourceType":"universal"
+            "sourceType":"universal"
         }      
     },
     {
@@ -20,7 +20,7 @@
         "tags": [],
         "source": {
             "id": "universal", 
-            "SourceType":"universal"
+            "sourceType":"universal"
         }      
     },
     {
@@ -32,7 +32,7 @@
         "tags": [],
         "source": {
             "id": "core.excursionequipment.antivenom", 
-            "SourceType":"EXCURSIONEQUIPMENT"
+            "sourceType":"EXCURSIONEQUIPMENT"
         }   
     },
     {
@@ -43,8 +43,8 @@
         "apcost": 1,
         "tags": [],
         "source": {
-            "id": "core.subclasses.valiantroar", 
-            "SourceType":"SUBCLASS"
+            "id": "core.abilities.valiantroar", 
+            "sourceType":"ABILITIES"
         }
     }, 
     {
@@ -55,8 +55,8 @@
         "apcost": 3,
         "tags": ["core.tags.feat"],
         "source": {
-            "id": "core.subclasses.standfast", 
-            "SourceType":"SUBCLASS"
+            "id": "core.abilities.standfast", 
+            "sourceType":"ABILITIES"
         }
     }
 

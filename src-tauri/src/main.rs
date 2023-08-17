@@ -102,7 +102,6 @@ fn load_compendium_data() -> Result<Vec<CompendiumData>, crate::Error>{
   let mut compendium_data:Vec<CompendiumData> = Vec::new(); 
   for file in FILENAMES {
     let(compendium_type, filename) = file;
-    println!("filename: {}", filename);
     let data = json!(fs::read_to_string(*filename)?);
     let compendium_type = *compendium_type;
     compendium_data.push(CompendiumData {compendium_type, data})

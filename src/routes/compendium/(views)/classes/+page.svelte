@@ -4,4 +4,4 @@
 
 </script>
 <h1>CLASSES</h1>
-<CompendiumView compendiumType="BASECLASSES"/>
+<CompendiumView compendiumType="SUBCLASSES"/>
