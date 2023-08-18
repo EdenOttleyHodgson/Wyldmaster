@@ -12,7 +12,7 @@
     {/if}
 
     {#each item.tags as tag}
-        <DetailedItemView itemRef={{itemID: tag, compType: "TAGS"}}/>
+        <ItemSelector itemID={tag}, compType="TAGS" on:ItemSelected/>
     {/each}
 {/if}
 <script lang="ts">
@@ -20,6 +20,7 @@
     import { type Compendium, getCompendium } from "../compendiumloader";
     import type { armourStats, CompendiumCombatGear, weaponStats } from "$lib/classes/compendiumclasses";
     import DetailedItemView from "../DetailedItemView.svelte";
+    import ItemSelector from "../ItemSelector.svelte";
 
 
     

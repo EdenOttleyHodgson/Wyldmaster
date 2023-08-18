@@ -4,7 +4,7 @@
     <p>{item.effect}</p>
 
     {#each item.actions as action}
-        <ActionView itemID={action}/>
+        <ItemSelector itemID={action}, compType="ACTIONS" on:ItemSelected/>
     {/each}
 
 {/if}
@@ -14,6 +14,7 @@
     import { Compendium, getCompendium } from "../compendiumloader";
     import type { CompendiumAbility } from "$lib/classes/compendiumclasses";
     import ActionView from "./ActionView.svelte";
+    import ItemSelector from "../ItemSelector.svelte";
 
     let item: CompendiumAbility | undefined
     export let itemID: string

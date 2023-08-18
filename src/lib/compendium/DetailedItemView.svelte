@@ -14,17 +14,17 @@
 
 
 {#if CompType === "ACTIONS"}
-    <ActionView itemID={itemID}></ActionView>
+    <ActionView itemID={itemID} on:ItemSelected></ActionView>
 {:else if CompType ==="BASECLASSES"}
     <BaseClassView itemID={itemID}></BaseClassView>
 {:else if CompType ==="COMBATGEAR"}
-    <CombatGearView itemID={itemID}></CombatGearView>
+    <CombatGearView itemID={itemID} on:ItemSelected></CombatGearView>
 {:else if CompType ==="EXCURSIONEQUIPMENT"}
-    <ExcursionEquipmentView itemID={itemID}></ExcursionEquipmentView>
+    <ExcursionEquipmentView itemID={itemID} on:ItemSelected></ExcursionEquipmentView>
 {:else if CompType ==="TAGS"}
     <TagView itemID={itemID}></TagView>
 {:else if CompType ==="SUBCLASSES"}
     <SubclassView itemID={itemID}></SubclassView>
 {:else if CompType ==="ABILITIES"}
-    <AbilityView itemID={itemID}></AbilityView>
+    <AbilityView itemID={itemID} on:ItemSelected></AbilityView>
 {/if}

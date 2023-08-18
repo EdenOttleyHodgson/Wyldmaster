@@ -61,7 +61,7 @@
     <div class ="menudiv item-view">
         {#if currentlySelectedItem}
         {#key currentlySelectedItem}
-            <DetailedItemView itemRef={currentlySelectedItem}/>
+            <DetailedItemView itemRef={currentlySelectedItem} on:ItemSelected={handleItemSelected}/>
         {/key}
         {/if}
     </div>

@@ -4,10 +4,10 @@
     <p>EFFECT: {item.effect}</p>
     <p>AP: {item.apcost}</p>
     {#each item.tags as tag }
-        <DetailedItemView itemRef={{itemID: tag, compType:"TAGS"}}/>        
+        <ItemSelector itemID={tag} compType="TAGS" on:ItemSelected/>        
     {/each}
     {#if item.source.sourceType != "UNIVERSAL" && item.source.sourceType}
-        <DetailedItemView itemRef={{itemID: item.source.id, compType:item.source.sourceType}}/>
+        <ItemSelector itemID={item.source.id} compType={item.source.sourceType} on:ItemSelected/>        
     {/if}
     
 {/if}
@@ -18,6 +18,7 @@
     import { type Compendium, getCompendium } from "../compendiumloader";
     import type { CompendiumAction } from "$lib/classes/compendiumclasses";
     import DetailedItemView from "../DetailedItemView.svelte";
+    import ItemSelector from "../ItemSelector.svelte";
 
  
     export let itemID:string
