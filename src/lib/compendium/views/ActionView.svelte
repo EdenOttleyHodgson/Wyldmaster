@@ -4,9 +4,11 @@
     <p>EFFECT: {item.effect}</p>
     <p>AP: {item.apcost}</p>
     {#each item.tags as tag }
+        <h3>Tags:</h3>
         <ItemSelector itemID={tag} compType="TAGS" on:ItemSelected/>        
     {/each}
     {#if item.source.sourceType != "UNIVERSAL" && item.source.sourceType}
+        <h3>Source:</h3>
         <ItemSelector itemID={item.source.id} compType={item.source.sourceType} on:ItemSelected/>        
     {/if}
     

@@ -3,7 +3,7 @@
     <p>Weight: {item.weight}</p>
     <p>Effect: {item.effect}</p>
     {#each item.actions as action }
-        <ItemSelector itemID={action}, compType="ACTIONS" on:ItemSelected/>
+        <ItemSelector itemID={action} compType="ACTIONS" on:ItemSelected/>
     {/each}
     {#if item.source.sourceType && item.source.sourceType != "UNIVERSAL"}
         <p>Source:</p>

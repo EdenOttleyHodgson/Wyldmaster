@@ -13,7 +13,11 @@
     .menu-option{
      border: 5px solid black;
      margin: 10px;
-     padding: 10px
+     padding: 10px;
+     width: 100%;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
     }
 
 </style>

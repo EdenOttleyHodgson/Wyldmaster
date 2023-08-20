@@ -1,6 +1,6 @@
 [
     {
-        "id": "core.action.reposition",
+        "id": "core.actions.reposition",
         "name": "Reposition",
         "flavour": "Think, plan, make sure you're in the right place.",
         "effect": "Move into an Adjacent Section",
@@ -12,7 +12,7 @@
         }      
     },
     {
-        "id": "core.action.recover",
+        "id": "core.actions.recover",
         "name": "Recover",
         "flavour": "Take a breath, regain composure.",
         "effect": "Regain 1 Stamina and Cleanse Fatigued",
@@ -24,7 +24,7 @@
         }      
     },
     {
-        "id": "core.action.useantivenom",
+        "id": "core.actions.useantivenom",
         "name": "Use Antivenom",
         "flavour": "Relief.",
         "effect": "This action can only be taken after using the Cleanse Self action. Cleanse Poisoned",
@@ -36,7 +36,7 @@
         }   
     },
     {
-        "id": "core.action.valiantroar",
+        "id": "core.actions.valiantroar",
         "name": "Valiant Roar",
         "flavour": "",
         "effect": "All characters currently interdicted by you have +1 difficulty on their next check to reposition.",
@@ -48,7 +48,7 @@
         }
     }, 
     {
-        "id": "core.action.standfast",
+        "id": "core.actions.standfast",
         "name": "Stand Fast",
         "flavour": "",
         "effect": "Until the end of your next turn, enemies within the same section can only make attacks against you. Additionally when you use this ability you restore X Stamina",

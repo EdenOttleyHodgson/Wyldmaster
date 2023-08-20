@@ -12,7 +12,7 @@
     {/if}
 
     {#each item.tags as tag}
-        <ItemSelector itemID={tag}, compType="TAGS" on:ItemSelected/>
+        <ItemSelector itemID={tag} compType="TAGS" on:ItemSelected/>
     {/each}
 {/if}
 <script lang="ts">
@@ -31,6 +31,7 @@
     onMount(async () => {
         compendium = await getCompendium()
         item = compendium.combatGearStore.getItem(itemID)
+        console.log(item?.tags)
     })
     
 </script>

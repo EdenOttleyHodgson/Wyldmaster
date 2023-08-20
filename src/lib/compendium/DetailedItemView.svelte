@@ -24,7 +24,7 @@
 {:else if CompType ==="TAGS"}
     <TagView itemID={itemID}></TagView>
 {:else if CompType ==="SUBCLASSES"}
-    <SubclassView itemID={itemID}></SubclassView>
+    <SubclassView itemID={itemID} on:ItemSelected></SubclassView>
 {:else if CompType ==="ABILITIES"}
     <AbilityView itemID={itemID} on:ItemSelected></AbilityView>
 {/if}

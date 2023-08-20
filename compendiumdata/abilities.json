@@ -7,7 +7,7 @@
         
         "source": {
             "id": "core.subclasses.wall", 
-            "sourceType":"SUBCLASS"
+            "sourceType":"SUBCLASSES"
         }
     },
     {
@@ -17,7 +17,7 @@
         "actions": ["core.actions.valiantroar"],
         "source": {
             "id": "core.subclasses.wall", 
-            "sourceType":"SUBCLASS"
+            "sourceType":"SUBCLASSES"
         }
     },
     {
@@ -27,7 +27,7 @@
         "actions": [],
         "source": {
             "id": "core.subclasses.wall", 
-            "sourceType":"SUBCLASS"
+            "sourceType":"SUBCLASSES"
         }
     },
     {
@@ -37,7 +37,7 @@
         "actions": ["core.actions.standfast"],
         "source": {
             "id": "core.subclasses.wall", 
-            "sourceType":"SUBCLASS"
+            "sourceType":"SUBCLASSES"
         }
     }
 ]

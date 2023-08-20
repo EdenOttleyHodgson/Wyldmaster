@@ -11,7 +11,6 @@ export class Compendium{
     abilityStore!: CompendiumStore<CompendiumAbility>
     subclassStore!: CompendiumStore<CompendiumSubclass>
     constructor(data: recieved_data[]) {
-        console.log(data)
         data.forEach((x) => {
             switch (x.compendium_type) {
             case "ACTIONS":
@@ -41,9 +40,9 @@ export class Compendium{
     }
     getGenericItem(itemID: string, compType: CompendiumType): CompendiumObject | undefined{
     try {
-        console.log(compType)
          switch(compType) {
             case "ACTIONS":
+                console.log(itemID)
                 return this.actionStore.getItem(itemID)
             case "BASECLASSES":
                 return this.baseClassStore.getItem(itemID)
@@ -54,6 +53,7 @@ export class Compendium{
             case "TAGS":
                 return this.tagStore.getItem(itemID) 
             case "SUBCLASSES":
+                console.log(this.subclassStore.getItem(itemID))
                 return this.subclassStore.getItem(itemID) 
             case "ABILITIES":
                 return this.abilityStore.getItem(itemID) 

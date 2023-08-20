@@ -4,9 +4,13 @@
     <p>{item.effect}</p>
 
     {#each item.actions as action}
-        <ItemSelector itemID={action}, compType="ACTIONS" on:ItemSelected/>
+        <h3>Actions:</h3>
+        <ItemSelector itemID={action} compType="ACTIONS" on:ItemSelected/>
     {/each}
-
+    {#if item.source.sourceType != "UNIVERSAL"}
+        <h3>Source:</h3>
+        <ItemSelector itemID={item.source.id} compType={item.source.sourceType} on:ItemSelected/>
+    {/if}
 {/if}
 
 <script lang="ts">
