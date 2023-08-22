@@ -3,11 +3,11 @@
     <p>Weight: {item.weight}</p>
     <p>Effect: {item.effect}</p>
     {#each item.actions as action }
-        <ItemSelector itemID={action} compType="ACTIONS" on:ItemSelected/>
+        <ItemSelector id={action} compType="ACTIONS" on:ItemSelected/>
     {/each}
     {#if item.source.sourceType && item.source.sourceType != "UNIVERSAL"}
         <p>Source:</p>
-        <ItemSelector itemID={item.source.id} compType={item.source.sourceType} on:ItemSelected/>        
+        <ItemSelector id={item.source.id} compType={item.source.sourceType} on:ItemSelected/>        
     {/if}
 
 {/if}
@@ -15,7 +15,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { type Compendium, getCompendium } from "../compendiumloader";
-    import type { CompendiumExcursionEquipment } from "$lib/classes/compendiumclasses";
+    import type { CompendiumExcursionEquipment } from "$lib/compendium/compendiumclasses";
     import DetailedItemView from "../DetailedItemView.svelte";
     import ItemSelector from "../ItemSelector.svelte";
 

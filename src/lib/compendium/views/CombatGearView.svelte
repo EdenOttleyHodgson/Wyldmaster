@@ -12,13 +12,13 @@
     {/if}
 
     {#each item.tags as tag}
-        <ItemSelector itemID={tag} compType="TAGS" on:ItemSelected/>
+        <ItemSelector id={tag} compType="TAGS" on:ItemSelected/>
     {/each}
 {/if}
 <script lang="ts">
     import { createEventDispatcher, onMount } from "svelte";
     import { type Compendium, getCompendium } from "../compendiumloader";
-    import type { armourStats, CompendiumCombatGear, weaponStats } from "$lib/classes/compendiumclasses";
+    import type { armourStats, CompendiumCombatGear, weaponStats } from "$lib/compendium/compendiumclasses";
     import DetailedItemView from "../DetailedItemView.svelte";
     import ItemSelector from "../ItemSelector.svelte";
 

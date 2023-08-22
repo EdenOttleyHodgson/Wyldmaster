@@ -92,13 +92,13 @@ const FILENAMES: &'static [(CompendiumType, &'static str)] = &[
 
 fn main() {
   tauri::Builder::default()
-    .invoke_handler(tauri::generate_handler![load_compendium_data])
+    .invoke_handler(tauri::generate_handler![load_compendium_data, load_all_characters])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
 
 #[tauri::command]
-fn load_compendium_data() -> Result<Vec<CompendiumData>, crate::Error>{
+fn load_compendium_data() -> Result<Vec<CompendiumData>, Error>{
   let mut compendium_data:Vec<CompendiumData> = Vec::new(); 
   for file in FILENAMES {
     let(compendium_type, filename) = file;
@@ -108,4 +108,44 @@ fn load_compendium_data() -> Result<Vec<CompendiumData>, crate::Error>{
 
   }
   Ok(compendium_data)
+}
+
+
+
+struct CharacterData{
+  id: String,
+  name: String,
+  level: usize,
+  player_name: String,
+  appearance: String,
+  notes: String,
+  background: String,
+  classes: (String, usize, bool),
+  inventory: Vec<(String, CompendiumType)>
+
+}
+
+#[tauri::command]
+fn load_all_characters() -> Result<Vec<Value>, Error>{
+    const DIRECTORY: &str = "D:/UserArea/Programming/svelte/wyldmaster/characters";
+    let entries = fs::read_dir(DIRECTORY)?;
+    let file_names:Vec<String> = entries.filter_map(|entry|{
+      let path = entry.ok()?.path();
+      if path.is_file(){
+        path.file_name()?.to_str().map(|s| s.to_owned())
+      } else {
+        None
+      }
+
+    }).collect();
+    dbg!(&file_names);
+    let mut characters: Vec<Value> = Vec::new();
+    println!("test!");
+    for file in file_names {
+      println!("{}",&file);
+      let fname = format!("{}/{}", DIRECTORY, file);
+      characters.push(json!(fs::read_to_string(fname)?));
+    }
+    Ok(characters)
+
 }

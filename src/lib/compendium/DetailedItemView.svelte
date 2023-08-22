@@ -7,8 +7,9 @@
     import SubclassView from "./views/SubclassView.svelte";
     import TagView from "./views/TagView.svelte";
     import ExcursionEquipmentView from "./views/ExcursionEquipmentView.svelte";
-    export let itemRef: {itemID: string, compType: CompendiumType}
-    let itemID = itemRef.itemID
+    import type { ItemRef } from "$lib/compendium/compendiumclasses/_CompendiumStore";
+    export let itemRef: ItemRef
+    let itemID = itemRef.id
     let CompType = itemRef.compType
 </script>
 

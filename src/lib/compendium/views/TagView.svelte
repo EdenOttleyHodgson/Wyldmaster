@@ -7,7 +7,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { type Compendium, getCompendium } from "../compendiumloader";
-    import type { CompendiumTag } from "$lib/classes/compendiumclasses";
+    import type { CompendiumTag } from "$lib/compendium/compendiumclasses";
 
  
     export let itemID: string

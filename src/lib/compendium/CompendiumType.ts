@@ -1,4 +1,4 @@
-import type { CompendiumAbility, CompendiumAction, CompendiumBaseClass, CompendiumCombatGear, CompendiumExcursionEquipment, CompendiumObject, CompendiumSubclass, CompendiumTag } from "$lib/classes/compendiumclasses";
+import type { CompendiumAbility, CompendiumAction, CompendiumBaseClass, CompendiumCombatGear, CompendiumExcursionEquipment, CompendiumObject, CompendiumSubclass, CompendiumTag } from "$lib/compendium/compendiumclasses";
 
 export type CompendiumType = 
     "ACTIONS"

@@ -2,13 +2,14 @@
     import { onMount } from "svelte";
     import type { CompendiumType } from "$lib/compendium/CompendiumType";
     import { Compendium, getCompendium } from "./compendiumloader";
-    import type { CompendiumObject } from "$lib/classes/compendiumclasses";
+    import type { CompendiumObject } from "$lib/compendium/compendiumclasses";
     import DetailedItemView from "./DetailedItemView.svelte";
     import ItemSelector from "./ItemSelector.svelte";
+    import type { ItemRef } from "$lib/compendium/compendiumclasses/_CompendiumStore";
     export let compendiumType: CompendiumType 
     let compendium: Compendium;
     let currentItems: CompendiumObject[] | undefined
-    let currentlySelectedItem: {itemID: string, compType: CompendiumType} | undefined = undefined
+    let currentlySelectedItem: ItemRef | undefined = undefined
     async function loadContent(): Promise<CompendiumObject[] | undefined> {
         compendium = await getCompendium();
         console.log(compendium)
@@ -39,7 +40,7 @@
         return undefined
     }
     onMount(async () => currentItems = await loadContent())
-    function handleItemSelected(e: CustomEvent<{itemID: string, compType:CompendiumType}>){
+    function handleItemSelected(e: CustomEvent<ItemRef>){
         currentlySelectedItem = e.detail
     }
 </script>
@@ -52,7 +53,7 @@
         <div class="menudiv item-selectors">
             {#each currentItems as item}
                 <ItemSelector 
-                    itemID={item.id} compType={compendiumType} 
+                    id={item.id} compType={compendiumType} 
                     on:ItemSelected={handleItemSelected}
                 />
             {/each}

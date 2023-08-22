@@ -5,11 +5,11 @@
     <p>AP: {item.apcost}</p>
     {#each item.tags as tag }
         <h3>Tags:</h3>
-        <ItemSelector itemID={tag} compType="TAGS" on:ItemSelected/>        
+        <ItemSelector id={tag} compType="TAGS" on:ItemSelected/>       
     {/each}
     {#if item.source.sourceType != "UNIVERSAL" && item.source.sourceType}
         <h3>Source:</h3>
-        <ItemSelector itemID={item.source.id} compType={item.source.sourceType} on:ItemSelected/>        
+        <ItemSelector id={item.source.id} compType={item.source.sourceType} on:ItemSelected/>        
     {/if}
     
 {/if}
@@ -18,7 +18,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { type Compendium, getCompendium } from "../compendiumloader";
-    import type { CompendiumAction } from "$lib/classes/compendiumclasses";
+    import type { CompendiumAction } from "$lib/compendium/compendiumclasses";
     import DetailedItemView from "../DetailedItemView.svelte";
     import ItemSelector from "../ItemSelector.svelte";
 

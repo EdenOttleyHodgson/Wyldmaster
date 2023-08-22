@@ -2,19 +2,20 @@
     import type { CompendiumType } from "$lib/compendium/CompendiumType";
     import { createEventDispatcher, onMount } from "svelte";
     import { Compendium, getCompendium } from "./compendiumloader";
-    import type { CompendiumObject } from "$lib/classes/compendiumclasses";
+    import type { CompendiumObject } from "$lib/compendium/compendiumclasses";
+    import type { ItemRef } from "$lib/compendium/compendiumclasses/_CompendiumStore";
     let compendium: Compendium
     let item: CompendiumObject | undefined
-    export let itemID: string;
+    export let id: string;
     export let compType: CompendiumType
-    const dispatch = createEventDispatcher<{ItemSelected:{itemID:string, compType:CompendiumType}}>();
+    const dispatch = createEventDispatcher<{ItemSelected:ItemRef}>();
     onMount(async () => {
         compendium = await getCompendium()
-        item = compendium.getGenericItem(itemID, compType)
+        item = compendium.getGenericItem(id, compType)
         console.log(item)
     })
     function selectThisItem(){
-        dispatch('ItemSelected', {itemID, compType})
+        dispatch('ItemSelected', {id, compType})
     }
 
 </script>

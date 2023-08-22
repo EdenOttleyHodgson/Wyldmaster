@@ -6,18 +6,20 @@
         {#each item.abilities as ability }
             <div>
                 <p>Level {ability.level}</p>
-                <ItemSelector itemID ={ability.id} compType ="ABILITIES" on:ItemSelected/>
+                <ItemSelector id ={ability.id} compType ="ABILITIES" on:ItemSelected/>
             </div>
         {/each}
     </div>
     {#if item.featureTable}
         <p>TODO: Render Feature Tables</p>
     {/if}
+    <p>Base Class</p>
+    <ItemSelector id={item.baseclass} compType="BASECLASSES" on:ItemSelected/>
 {/if}
 <script lang="ts">
     import { onMount } from "svelte";
     import { type Compendium, getCompendium } from "../compendiumloader";
-    import type { CompendiumSubclass } from "$lib/classes/compendiumclasses";
+    import type { CompendiumSubclass } from "$lib/compendium/compendiumclasses";
     import DetailedItemView from "../DetailedItemView.svelte";
     import ItemSelector from "../ItemSelector.svelte";
 
