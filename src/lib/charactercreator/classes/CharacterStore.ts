@@ -22,3 +22,7 @@ export async function getCharacterStore(){
     }
     return characterStore;
 } 
+
+export function getCharacterById(id: string): Character | undefined {
+    return characterStore.find((x) => x.staticInfo.id === id)
+}
