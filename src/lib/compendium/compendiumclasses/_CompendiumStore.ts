@@ -24,8 +24,6 @@ export class CompendiumStore<T extends CompendiumObject> {
         this.items = items;
     }
     getItem(itemID: string): T | undefined {
-        console.log(itemID)
-        console.log(this)
         return this.items.find((x) => x.id === itemID)
     }
 

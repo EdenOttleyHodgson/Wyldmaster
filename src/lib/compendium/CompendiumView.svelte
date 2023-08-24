@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from "svelte";
+    import { createEventDispatcher, onMount } from "svelte";
     import type { CompendiumType } from "$lib/compendium/CompendiumType";
     import { Compendium, getCompendium } from "./compendiumloader";
     import type { CompendiumObject } from "$lib/compendium/compendiumclasses";
@@ -40,8 +40,11 @@
         return undefined
     }
     onMount(async () => currentItems = await loadContent())
+
+    const dispatch = createEventDispatcher<{ItemSelected:ItemRef}>()
     function handleItemSelected(e: CustomEvent<ItemRef>){
         currentlySelectedItem = e.detail
+        dispatch("ItemSelected", e.detail)
     }
 </script>
 
