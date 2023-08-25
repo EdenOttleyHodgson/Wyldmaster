@@ -1,8 +1,9 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
-use serde::ser::SerializeStruct;
+use serde::{ser::SerializeStruct, Deserialize};
 use serde_json::{self, Value, json};
-use std::{fs::{self, File}, path::Path, fmt::format};
+use tauri::api::path::data_dir;
+use std::fs::{self, File};
 
 
 
@@ -24,7 +25,7 @@ impl serde::Serialize for Error{
 
 
 #[derive(Debug)]
-#[derive(Copy)]
+#[derive(Copy, Deserialize)]
 enum CompendiumType{
   Actions,
   BaseClasses,
@@ -34,6 +35,7 @@ enum CompendiumType{
   Subclasses,
   Abilities
 }
+
 
 impl Clone for CompendiumType{
  fn clone(&self) -> Self {
@@ -96,7 +98,7 @@ const FILENAMES: &'static [(CompendiumType, &'static str)] = &[
 
 fn main() {
   tauri::Builder::default()
-    .invoke_handler(tauri::generate_handler![load_compendium_data, load_all_characters])
+    .invoke_handler(tauri::generate_handler![load_compendium_data, load_all_characters, save_character])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
@@ -147,8 +149,8 @@ fn load_compendium_data(data_dir: &str) -> Result<Vec<CompendiumData>, Error>{
   Ok(compendium_data)
 }
 
-
-
+/**
+#[derive(Deserialize, Debug)]
 struct CharacterData{
   id: String,
   name: String,
@@ -161,11 +163,26 @@ struct CharacterData{
   inventory: Vec<(String, CompendiumType)>
 
 }
-
+*/
 #[tauri::command]
-fn load_all_characters() -> Result<Vec<Value>, Error>{
-    const DIRECTORY: &str = "D:/UserArea/Programming/svelte/wyldmaster/characters";
-    let entries = fs::read_dir(DIRECTORY)?;
+fn load_all_characters(data_dir: &str) -> Result<Vec<Value>, Error>{
+    let directory = format!("{}/{}", data_dir, "characters");
+    let entries = {
+      let entries = fs::read_dir(&directory);
+      match entries {
+        Ok(e) => e,
+        Err(e) => {
+          match e.kind() {
+            std::io::ErrorKind::NotFound => {
+              fs::create_dir(&directory)?;
+              fs::read_dir(&directory)?
+            }
+            _ => panic!("{}", e)
+          }
+        }
+      }
+    
+    };
     let file_names:Vec<String> = entries.filter_map(|entry|{
       let path = entry.ok()?.path();
       if path.is_file(){
@@ -180,7 +197,7 @@ fn load_all_characters() -> Result<Vec<Value>, Error>{
     println!("test!");
     for file in file_names {
       println!("{}",&file);
-      let fname = format!("{}/{}", DIRECTORY, file);
+      let fname = format!("{}/{}", &directory, file);
       characters.push(json!(fs::read_to_string(fname)?));
     }
     Ok(characters)
@@ -190,7 +207,9 @@ fn load_all_characters() -> Result<Vec<Value>, Error>{
 
 
 #[tauri::command]
-fn save_character(character_info: Value) -> Result<(),()> {
-    dbg!(character_info);
-    Ok(())
+fn save_character(character_info: Value, id: &str, data_dir: &str) -> Result<(), Error> {
+    let character_as_string = serde_json::to_string_pretty(&character_info).unwrap();
+    let filename = format!("{}/{}/{}.json", data_dir, "characters", id);
+    fs::write(filename, character_as_string)?;
+    Ok(()) 
 }

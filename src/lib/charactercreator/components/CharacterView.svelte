@@ -10,8 +10,11 @@
     import AbilityView from "$lib/compendium/views/AbilityView.svelte";
     import CombatGearView from "$lib/compendium/views/CombatGearView.svelte";
     import ExcursionEquipmentView from "$lib/compendium/views/ExcursionEquipmentView.svelte";
+    import { appLocalDataDir } from "@tauri-apps/api/path";
+    import { invoke } from "@tauri-apps/api/tauri";
     import { onMount } from "svelte";
     import { derived } from "svelte/store";
+    import { load_characters } from "../classes/CharacterStore";
     export let data
     let inventoryKey = false
     let character = data.character as Character
@@ -72,8 +75,9 @@
         inventoryKey = !inventoryKey
         currentWeight = calculateWeight()
     }
-    function saveCharacter(){
-        //todo
+    async function saveCharacter(){
+        await invoke("save_character", {characterInfo: character.staticInfo, id:character.staticInfo.id, dataDir: await appLocalDataDir()})
+        await load_characters()
     }
     function getAbilitySource(id: string):{name:string, level:number} {
         let ability = Character.compendium.getGenericItem(id, "ABILITIES") as CompendiumAbility
@@ -167,7 +171,10 @@
                     {/each}
                 </div>
             </div>
-            <div class="navbar-div"></div>
+            <div class="navbar-div">
+                <button on:click={saveCharacter}>Save</button>
+            </div>
+
         </div>
         <div class="inventory-div">
             <p>Weight: {currentWeight} / {maxWeight}</p>

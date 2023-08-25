@@ -1,0 +1,30 @@
+{
+  "appearance": "Test Shaped",
+  "background": "Was a testmeister",
+  "classes": [
+    {
+      "class_id": "core.subclasses.wall",
+      "level": 3,
+      "original": true
+    }
+  ],
+  "id": "0",
+  "inventory": [
+    {
+      "compType": "EXCURSIONEQUIPMENT",
+      "id": "core.excursionequipment.antivenom"
+    },
+    {
+      "compType": "COMBATGEAR",
+      "id": "core.combatgear.knife"
+    },
+    {
+      "compType": "COMBATGEAR",
+      "id": "core.combatgear.longbow"
+    }
+  ],
+  "level": 3,
+  "name": "Test",
+  "notes": "Test Notes",
+  "player_name": "test lord"
+}
