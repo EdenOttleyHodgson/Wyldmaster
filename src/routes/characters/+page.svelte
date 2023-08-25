@@ -18,3 +18,5 @@
 {#each characterStore as character }
     <CharacterSelector character={character} on:CharacterSelected={handleCharacterSelected}/>
 {/each}
+
+<button on:click={() => goto("characters/creator")}>Create New Character</button>

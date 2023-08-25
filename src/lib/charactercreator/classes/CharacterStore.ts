@@ -31,3 +31,8 @@ export function getCharacterById(id: string): Character | undefined {
     return characterStore.find((x) => x.staticInfo.id === id)
 }
 
+
+export async function saveCharacter(character: Character){
+    await invoke("save_character", {characterInfo: character.staticInfo, id:character.staticInfo.id, dataDir: await appLocalDataDir()})
+    await load_characters()
+}

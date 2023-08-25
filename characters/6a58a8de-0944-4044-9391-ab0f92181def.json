@@ -1,0 +1,17 @@
+{
+  "appearance": "dd",
+  "background": "ddd",
+  "classes": [
+    {
+      "class_id": "core.subclasses.wall",
+      "level": 1,
+      "original": true
+    }
+  ],
+  "id": "6a58a8de-0944-4044-9391-ab0f92181def",
+  "inventory": [],
+  "level": 1,
+  "name": "d",
+  "notes": "dddd",
+  "player_name": "dddd"
+}

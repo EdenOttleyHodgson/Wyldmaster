@@ -14,7 +14,7 @@
     import { invoke } from "@tauri-apps/api/tauri";
     import { onMount } from "svelte";
     import { derived } from "svelte/store";
-    import { load_characters } from "../classes/CharacterStore";
+    import { load_characters, saveCharacter } from "../classes/CharacterStore";
     export let data
     let inventoryKey = false
     let character = data.character as Character
@@ -65,7 +65,7 @@
             character.staticInfo.inventory.push(itemToAdd)
             showingInventoryAddScreen = false
             currentWeight = calculateWeight()
-            saveCharacter()
+            saveCharacter(character)
         }
         console.warn("Tried to add a non inventory item to the inventory.")
     }
@@ -74,10 +74,6 @@
         character.staticInfo.inventory.splice(idx, 1)
         inventoryKey = !inventoryKey
         currentWeight = calculateWeight()
-    }
-    async function saveCharacter(){
-        await invoke("save_character", {characterInfo: character.staticInfo, id:character.staticInfo.id, dataDir: await appLocalDataDir()})
-        await load_characters()
     }
     function getAbilitySource(id: string):{name:string, level:number} {
         let ability = Character.compendium.getGenericItem(id, "ABILITIES") as CompendiumAbility
@@ -172,7 +168,7 @@
                 </div>
             </div>
             <div class="navbar-div">
-                <button on:click={saveCharacter}>Save</button>
+                <button on:click={() => saveCharacter(character)}>Save</button>
             </div>
 
         </div>

@@ -2,7 +2,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use serde::{ser::SerializeStruct, Deserialize};
 use serde_json::{self, Value, json};
-use tauri::api::path::data_dir;
 use std::fs::{self, File};
 
 

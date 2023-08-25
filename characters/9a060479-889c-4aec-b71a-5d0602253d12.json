@@ -1,0 +1,17 @@
+{
+  "appearance": "E",
+  "background": "E",
+  "classes": [
+    {
+      "class_id": "core.subclasses.wall",
+      "level": 1,
+      "original": true
+    }
+  ],
+  "id": "9a060479-889c-4aec-b71a-5d0602253d12",
+  "inventory": [],
+  "level": 1,
+  "name": "E",
+  "notes": "E",
+  "player_name": "E"
+}
