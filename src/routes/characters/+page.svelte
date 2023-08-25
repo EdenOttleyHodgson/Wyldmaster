@@ -1,6 +1,6 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
-    import type { Character } from "$lib/charactercreator/classes/Character";
+    import type { Character } from "$lib/charactercreator/classes/CharacterClass";
     import { getCharacterStore } from "$lib/charactercreator/classes/CharacterStore";
     import CharacterSelector from "$lib/charactercreator/components/CharacterSelector.svelte";
     import { onMount } from "svelte";
@@ -8,7 +8,6 @@
     let characterStore: Character[] = []
     onMount(async () => {
         characterStore = await getCharacterStore()
-        console.log(characterStore)
     })
     function handleCharacterSelected(e: CustomEvent<string>){
         goto("characters/" + e.detail)

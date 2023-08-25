@@ -1,14 +1,16 @@
 import { invoke } from "@tauri-apps/api/tauri";
-import { Character, type StaticInfo } from "./Character";
+import { Character, type StaticInfo } from "./CharacterClass";
+import { getCompendium, load_compendium_data } from "$lib/compendium/compendiumloader";
 
 let characterStore: Character[] = []
 let loaded: boolean = false;
 
 async function load_characters() {
     let loadedChars = await invoke("load_all_characters") as string[]
+    let compendium = await getCompendium()
+    Character.compendium = compendium
     loadedChars.forEach((unparsedData) => {
         let charData = JSON.parse(unparsedData) as StaticInfo
-        console.log(charData)
         let newChar = new Character(charData)
         characterStore.push(newChar)
     })

@@ -5,7 +5,7 @@
     {#each item.actions as action }
         <ItemSelector id={action} compType="ACTIONS" on:ItemSelected/>
     {/each}
-    {#if item.source.sourceType && item.source.sourceType != "UNIVERSAL"}
+    {#if item.source.sourceType && item.source.id != "universal"}
         <p>Source:</p>
         <ItemSelector id={item.source.id} compType={item.source.sourceType} on:ItemSelected/>        
     {/if}

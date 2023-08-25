@@ -1,6 +1,8 @@
 import { invoke } from "@tauri-apps/api/tauri"
 import type { CompendiumType } from "$lib/compendium/CompendiumType"
 import { type CompendiumBaseClass, type CompendiumExcursionEquipment,  type CompendiumCombatGear,  type CompendiumTag,  type CompendiumAbility,  type CompendiumSubclass, type CompendiumAction, CompendiumStore, type CompendiumObject } from "$lib/compendium/compendiumclasses"
+import { Character } from "$lib/charactercreator/classes/CharacterClass"
+import { appLocalDataDir } from '@tauri-apps/api/path';
 let compendium: Compendium
 export class Compendium{
     actionStore!: CompendiumStore<CompendiumAction>
@@ -15,6 +17,7 @@ export class Compendium{
             switch (x.compendium_type) {
             case "ACTIONS":
                 this.actionStore = new CompendiumStore<CompendiumAction>(JSON.parse(x.data) as CompendiumAction[])
+                console.log(this.actionStore)
                 break;
             case "BASECLASSES":
                 this.baseClassStore = new CompendiumStore<CompendiumBaseClass>(JSON.parse(x.data) as CompendiumBaseClass[])
@@ -42,7 +45,6 @@ export class Compendium{
         try {
             switch(compType) {
                 case "ACTIONS":
-                    console.log(itemID)
                     return this.actionStore.getItem(itemID)
                 case "BASECLASSES":
                     return this.baseClassStore.getItem(itemID)
@@ -53,7 +55,6 @@ export class Compendium{
                 case "TAGS":
                     return this.tagStore.getItem(itemID) 
                 case "SUBCLASSES":
-                    console.log(this.subclassStore.getItem(itemID))
                     return this.subclassStore.getItem(itemID) 
                 case "ABILITIES":
                     return this.abilityStore.getItem(itemID) 
@@ -68,6 +69,7 @@ export class Compendium{
 export async function getCompendium(){
     if(!compendium) {
         await load_compendium_data()
+        Character.compendium = compendium
     }
     return compendium;
 }
@@ -80,6 +82,9 @@ interface recieved_data{
     data: string
 }
 export async function load_compendium_data() {
-    const data = await invoke("load_compendium_data") as recieved_data[]
+    const appLocalDataDirPath = await appLocalDataDir();
+    console.log(appLocalDataDirPath)
+    const data = await invoke("load_compendium_data", {dataDir: appLocalDataDirPath}) as recieved_data[]
+    console.log(data)
     compendium = new Compendium(data)
 }

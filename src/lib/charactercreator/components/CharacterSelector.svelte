@@ -1,6 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
-    import type { Character } from "../classes/Character";
+    import type { Character } from "../classes/CharacterClass";
 
     export let character: Character
     function selectThisCharacter(){

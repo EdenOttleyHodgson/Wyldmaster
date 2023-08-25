@@ -4,7 +4,7 @@
         "name": "Steel Wall",
         "effect": "While in The Clash, the Interdict Action costs 0 AP.",
         "actions": [],
-        
+        "level": 1,
         "source": {
             "id": "core.subclasses.wall", 
             "sourceType":"SUBCLASSES"
@@ -15,6 +15,7 @@
         "name": "Valiant Roar",
         "effect": "Gain the valiant roar action",
         "actions": ["core.actions.valiantroar"],
+        "level": 2,
         "source": {
             "id": "core.subclasses.wall", 
             "sourceType":"SUBCLASSES"
@@ -25,6 +26,7 @@
         "name": "Shield Bond",
         "effect": "You may target allies in the same section as you with the Raise Shield Action",
         "actions": [],
+        "level": 3,
         "source": {
             "id": "core.subclasses.wall", 
             "sourceType":"SUBCLASSES"
@@ -35,6 +37,7 @@
         "name": "Stand Fast",
         "effect": "Feat: Gain the Stand Fast Action",
         "actions": ["core.actions.standfast"],
+        "level": 4,
         "source": {
             "id": "core.subclasses.wall", 
             "sourceType":"SUBCLASSES"

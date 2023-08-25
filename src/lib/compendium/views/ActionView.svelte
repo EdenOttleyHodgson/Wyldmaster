@@ -7,7 +7,7 @@
         <h3>Tags:</h3>
         <ItemSelector id={tag} compType="TAGS" on:ItemSelected/>       
     {/each}
-    {#if item.source.sourceType != "UNIVERSAL" && item.source.sourceType}
+    {#if item.source.id != "universal" && item.source.sourceType}
         <h3>Source:</h3>
         <ItemSelector id={item.source.id} compType={item.source.sourceType} on:ItemSelected/>        
     {/if}
@@ -28,7 +28,9 @@
     let item: CompendiumAction | undefined
     onMount(async () => {
         compendium = await getCompendium()
-        item = compendium.actionStore.getItem(itemID)    
+        item = compendium.actionStore.getItem(itemID)
+        console.log(compendium.actionStore)
+        console.log(item)
     })
 </script>
 

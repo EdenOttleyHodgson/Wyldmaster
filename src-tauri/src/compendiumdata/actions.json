@@ -1,0 +1,63 @@
+[
+    {
+        "id": "core.actions.reposition",
+        "name": "Reposition",
+        "flavour": "Think, plan, make sure you're in the right place.",
+        "effect": "Move into an Adjacent Section",
+        "apcost": 1,
+        "tags": [],
+        "source": {
+            "id": "universal", 
+            "sourceType":"universal"
+        }      
+    },
+    {
+        "id": "core.actions.recover",
+        "name": "Recover",
+        "flavour": "Take a breath, regain composure.",
+        "effect": "Regain 1 Stamina and Cleanse Fatigued",
+        "apcost": 1,
+        "tags": [],
+        "source": {
+            "id": "universal", 
+            "sourceType":"universal"
+        }      
+    },
+    {
+        "id": "core.actions.useantivenom",
+        "name": "Use Antivenom",
+        "flavour": "Relief.",
+        "effect": "This action can only be taken after using the Cleanse Self action. Cleanse Poisoned",
+        "apcost": 0,
+        "tags": [],
+        "source": {
+            "id": "core.excursionequipment.antivenom", 
+            "sourceType":"EXCURSIONEQUIPMENT"
+        }   
+    },
+    {
+        "id": "core.actions.valiantroar",
+        "name": "Valiant Roar",
+        "flavour": "",
+        "effect": "All characters currently interdicted by you have +1 difficulty on their next check to reposition.",
+        "apcost": 1,
+        "tags": [],
+        "source": {
+            "id": "core.abilities.valiantroar", 
+            "sourceType":"ABILITIES"
+        }
+    }, 
+    {
+        "id": "core.actions.standfast",
+        "name": "Stand Fast",
+        "flavour": "",
+        "effect": "Until the end of your next turn, enemies within the same section can only make attacks against you. Additionally when you use this ability you restore X Stamina",
+        "apcost": 3,
+        "tags": ["core.tags.feat"],
+        "source": {
+            "id": "core.abilities.standfast", 
+            "sourceType":"ABILITIES"
+        }
+    }
+
+]

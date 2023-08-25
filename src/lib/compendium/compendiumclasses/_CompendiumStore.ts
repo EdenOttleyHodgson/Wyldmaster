@@ -8,7 +8,7 @@ export interface CompendiumObject{
 
 export interface Source{
     id: string,
-    sourceType: CompendiumType | "UNIVERSAL"
+    sourceType: CompendiumType
 }
 
 export interface ItemRef{
@@ -19,7 +19,7 @@ export interface ItemRef{
 
 
 export class CompendiumStore<T extends CompendiumObject> {
-    items: T[]
+    readonly items: T[] 
     constructor(items: T[]) {
         this.items = items;
     }

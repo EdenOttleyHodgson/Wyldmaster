@@ -2,7 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use serde::ser::SerializeStruct;
 use serde_json::{self, Value, json};
-use std::fs;
+use std::{fs::{self, File}, path::Path, fmt::format};
 
 
 
@@ -22,6 +22,8 @@ impl serde::Serialize for Error{
 
 }
 
+
+#[derive(Debug)]
 #[derive(Copy)]
 enum CompendiumType{
   Actions,
@@ -62,6 +64,8 @@ impl serde::Serialize for CompendiumType{
         }
     }
 }
+
+#[derive(Debug)]
 struct CompendiumData {
   compendium_type: CompendiumType,
   data: Value
@@ -81,13 +85,13 @@ impl serde::Serialize for CompendiumData{
 
 
 const FILENAMES: &'static [(CompendiumType, &'static str)] = &[
-  (CompendiumType::Actions, "D:/UserArea/Programming/svelte/wyldmaster/compendiumdata/actions.json"), 
-  (CompendiumType::BaseClasses, "D:/UserArea/Programming/svelte/wyldmaster/compendiumdata/baseclasses.json"),
-  (CompendiumType::Subclasses, "D:/UserArea/Programming/svelte/wyldmaster/compendiumdata/subclasses.json"),
-  (CompendiumType::Abilities, "D:/UserArea/Programming/svelte/wyldmaster/compendiumdata/abilities.json"),
-  (CompendiumType::CombatGear, "D:/UserArea/Programming/svelte/wyldmaster/compendiumdata/combatgear.json"),
-  (CompendiumType::ExcursionEquipment, "D:/UserArea/Programming/svelte/wyldmaster/compendiumdata/excursionequipment.json"),
-  (CompendiumType::Tags, "D:/UserArea/Programming/svelte/wyldmaster/compendiumdata/tags.json")
+  (CompendiumType::Actions, "actions.json"), 
+  (CompendiumType::BaseClasses, "baseclasses.json"),
+  (CompendiumType::Subclasses, "subclasses.json"),
+  (CompendiumType::Abilities, "abilities.json"),
+  (CompendiumType::CombatGear, "combatgear.json"),
+  (CompendiumType::ExcursionEquipment, "excursionequipment.json"),
+  (CompendiumType::Tags, "tags.json")
   ];
 
 fn main() {
@@ -98,14 +102,47 @@ fn main() {
 }
 
 #[tauri::command]
-fn load_compendium_data() -> Result<Vec<CompendiumData>, Error>{
+fn load_compendium_data(data_dir: &str) -> Result<Vec<CompendiumData>, Error>{
   let mut compendium_data:Vec<CompendiumData> = Vec::new(); 
+  let compendium_directory = format!("{}/{}",data_dir, "compendiumdata");
+  let entries = {
+  
+    let entries = fs::read_dir(&compendium_directory);
+    match entries {
+        Ok(e) => e,
+        Err(e) => {
+          match e.kind() {
+            std::io::ErrorKind::NotFound => {
+              fs::create_dir(&compendium_directory)?;
+              fs::read_dir(&compendium_directory)?
+            }
+            _ => panic!("{}", e)
+          }
+        }
+    }
+  };
+  dbg!(entries);
   for file in FILENAMES {
     let(compendium_type, filename) = file;
-    let data = json!(fs::read_to_string(*filename)?);
+    let filename = format!("{}/{}", compendium_directory, filename);
+    let data = {
+      let contents = fs::read_to_string(&filename);
+      match contents {
+        Ok(e) => json!(e),
+        Err(e) => {
+          match e.kind() {
+            std::io::ErrorKind::NotFound => {
+              File::create(&filename)?;
+              json!(fs::read_to_string(&filename)?)
+            }
+            _ => panic!("{}", e)
+          }
+        }    
+      }
+    };
     let compendium_type = *compendium_type;
     compendium_data.push(CompendiumData {compendium_type, data})
-
+    
   }
   Ok(compendium_data)
 }
@@ -148,4 +185,12 @@ fn load_all_characters() -> Result<Vec<Value>, Error>{
     }
     Ok(characters)
 
+}
+
+
+
+#[tauri::command]
+fn save_character(character_info: Value) -> Result<(),()> {
+    dbg!(character_info);
+    Ok(())
 }
