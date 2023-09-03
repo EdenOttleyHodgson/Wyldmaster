@@ -1,16 +1,39 @@
 <div class="page-box">
     <div class="printable">
-        <div style="height: 5%; border: 1px solid black">
-            <div style="margin: -1mm; width: 100%; height:100%; border 1px solid black">
-                <div class = info-div style="width: 40%;">
+        <div style="height: 10%; border: 1px solid black; display:flex; align-items:center">
+            <div class="section">
+                <div class = info-div style="width: 40%; height: 40%">
                     <div class ="write-in" style="width: 95%; min-height: 50%"></div>
                     Name
                 </div>
-                
+                <div style="width: 100%; height:80%; display: flex; flex-direction: column; margin-top: -5mm">
+                    <div style="display: flex; justify-content:center; height: 45%; align-items:center">
+                        <div class="info-div" style="width: 50%; height:40%; margin-left: -3mm !important">
+                            <div class="write-in"></div>
+                            Player Name
+                        </div>
+                        <div class="info-div" style="width: 50%; height:40%">
+                            <div class="write-in">
+                            </div>
+                            Background
+                        </div>
+                    </div>
+                    <div style="display: flex; height: 45%; align-items: center;">
+                        <div class="info-div" style="width: 10%; height: 40%">
+                            <div class="write-in"></div>
+                            Level
+                        </div>
+                        <div class="info-div" style="width: 90%; height: 40%">
+                            <div class="write-in"></div>
+                            Classes
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
-        <div style="height: 5%; border: 1px solid black">middle bar</div>
+
+        <div style="height: 5%; border: 1px solid black"></div>
+        
         <div style="height: 90%; border: 1px solid black">bottom bar</div>
         
     </div>
@@ -99,11 +122,20 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 80%;
         margin: 0mm !important;
         font-size: small;
     }
     .write-in{
         border: 1mm solid black;
+        width: 95%;
+        min-height: 100%;
+    }
+    .section{
+       display: flex;
+       align-items: center;
+       
+       width: 100%;
+       height: 100%;
+       margin: -1mm;
     }
 </style>
