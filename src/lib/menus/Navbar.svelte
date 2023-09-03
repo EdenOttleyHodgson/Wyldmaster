@@ -29,7 +29,13 @@
   background: #ddd;
   color: green
 }
-
+@media print {
+  .navbar{
+    visibility: hidden;
+    height: 0;
+    width: 0;
+  }
+}
 </style>
 
 <div class="navbar">

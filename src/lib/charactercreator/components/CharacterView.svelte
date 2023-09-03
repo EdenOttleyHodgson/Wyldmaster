@@ -1,20 +1,15 @@
 <script lang="ts">
     import { Character } from "$lib/charactercreator/classes/CharacterClass";
-    import CharacterSelector from "$lib/charactercreator/components/CharacterSelector.svelte";
     import CompendiumView from "$lib/compendium/CompendiumView.svelte";
     import DetailedItemView from "$lib/compendium/DetailedItemView.svelte";
     import ItemSelector from "$lib/compendium/ItemSelector.svelte";
     import type { CompendiumAbility } from "$lib/compendium/compendiumclasses";
-    import type { ItemRef, Source } from "$lib/compendium/compendiumclasses/_CompendiumStore.js";
+    import type { ItemRef } from "$lib/compendium/compendiumclasses/_CompendiumStore.js";
     import { getCompendium, type Compendium } from "$lib/compendium/compendiumloader.js";
-    import AbilityView from "$lib/compendium/views/AbilityView.svelte";
-    import CombatGearView from "$lib/compendium/views/CombatGearView.svelte";
-    import ExcursionEquipmentView from "$lib/compendium/views/ExcursionEquipmentView.svelte";
-    import { appLocalDataDir } from "@tauri-apps/api/path";
-    import { invoke } from "@tauri-apps/api/tauri";
     import { onMount } from "svelte";
-    import { derived } from "svelte/store";
-    import { load_characters, saveCharacter } from "../classes/CharacterStore";
+    import { saveCharacter } from "../classes/CharacterStore";
+    import { goto } from "$app/navigation";
+    import { page } from "$app/stores";
     export let data
     let inventoryKey = false
     let character = data.character as Character
@@ -84,6 +79,13 @@
             }
         }
         return{name: "BAD!", level: 0}
+    }
+    function gotoPrint(){
+        if($page) {
+            let url = $page.url + "/print"
+            console.log(url)
+            goto(url)
+        }
     }
 </script>
 
@@ -169,6 +171,7 @@
             </div>
             <div class="navbar-div">
                 <button on:click={() => saveCharacter(character)}>Save</button>
+                <button on:click={gotoPrint}>Print</button>
             </div>
 
         </div>
