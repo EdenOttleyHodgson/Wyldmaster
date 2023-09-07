@@ -29,5 +29,546 @@
 
         ],
         "featureTable": null
+    },
+    {
+        "id": "core.subclasses.paladin",
+        "name": "The Paladin",
+        "flavour": "Hymns and Steel",
+        "description": "A more support focused subclass, specializes in supporting allies in the same zone as them.",
+        "baseclass": "core.baseclasses.bulwark",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.battlehymn",
+                "name": "Battle Hymn"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.rallyingcry",
+                "name": "Rallying Cry"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.commandingvoice",
+                "name": "Commanding Voice"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.purifyingaria",
+                "name": "Purifying Aria"
+            }
+        ],
+        "featureTable": {
+            "name" : "Hymns",
+            "table": [
+            ["Name", "Tier 1 Effect", "Tier 2 Effect", "Tier 3 Effect"],
+            ["Hold Fast Hold Strong", "All allies gain +1 to their resilience statistic", "All allies gain +1 accuracy to their interdiction checks.", "The first time an ally under the effect of this Hymn takes a wound, they ignore it. This effect may only occur once per ally per battle hymn."],
+            ["With Faith and Sword!", "All allies gain +1 to their melee proficiency statistic.", "One time on their turn, when an ally hits with an attack, they may cause the attack to do 1 additional damage.","When an ally kills an enemy, they gain 2 AP."],
+            ["Blot Out the Sun!", "Todo!", "Todo!", "Todo!"],
+            ["Rout Them!", "Todo!", "Todo!", "Todo!"]
+        ]
     }
+
+    },
+    {
+        "id": "core.subclasses.vanguard",
+        "name": "The Vanguard",
+        "flavour": "A speartip punching through.",
+        "description": "Subclass focused on breaking through the enemy's front line and causing havoc.",
+        "baseclass": "core.baseclasses.bulwark",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.viciousattack",
+                "name": "Vicious Attack"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.furiousspeed",
+                "name": "Furious Speed"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.linebreaker",
+                "name": "Line Breaker"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.shatteringcharge",
+                "name": "Shattering Charge"
+            }
+        ],
+        "featureTable": null
+
+    },
+    {
+        "id": "core.subclasses.assassin",
+        "name": "The Assassin",
+        "flavour": "A kiss of steel",
+        "description": "Subclass focused on sneaking around through the flanks and killing high value targets.",
+        "baseclass": "core.baseclasses.knave",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.knifeinthedark",
+                "name": "Knife in the Dark"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.redsmile",
+                "name": "Red Smile"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.swiftshadow",
+                "name": "Swift Shadow"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.finishingtouch",
+                "name": "Finishing Touch"
+            }
+        ],
+        "featureTable": null
+
+    },
+    {
+        "id": "core.subclasses.rogue",
+        "name": "The Rogue",
+        "description": "",
+        "flavour": "",
+        "baseclass": "core.baseclasses.knave",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 2,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 3,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 4,
+                "id": "",
+                "name": ""
+            }
+        ]
+    },
+    {
+        "id": "core.subclasses.handyman",
+        "name": "The Handyman",
+        "flavour": "Leather Belts and Steel Tools",
+        "description": "Subclass focused on excursion equipment and its efficent usage.",
+        "baseclass": "core.baseclasses.knave",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.deeppockets",
+                "name": "Deep Pockets"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.craftsmanstouch",
+                "name": "Craftsman's Touch"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.quickfingers",
+                "name": "Quick Fingers"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.masterimproviser",
+                "name": "Master Improviser"
+            }
+        ],
+        "featureTable": null
+
+    },
+
+    {
+        "id": "core.subclasses.sniper",
+        "name": "The Sniper",
+        "flavour": "Between the Eyes",
+        "description": "Subclass focused on attacking with ranged weapons.",
+        "baseclass": "core.baseclasses.hunter",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.prepareshot",
+                "name": "Prepare Shot"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.rangingshots",
+                "name": "Ranging Shots"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.maimingshot",
+                "name": "Maiming Shot"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.heartseekingshot",
+                "name": "Heart Seeking Shot"
+            }
+        ],
+        "featureTable": null
+
+    },
+    {
+        "id": "core.subclasses.wyldling",
+        "name": "The Wyldling",
+        "flavour": "Embrace the Wylds",
+        "description": "",
+        "baseclass": "core.baseclasses.hunter",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.stepofthewyld",
+                "name": "Step of the Wyld"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.thornwreath",
+                "name": "Thorn Wreath"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.masteroftheearth",
+                "name": "Master of the Earth"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.natureswrath",
+                "name": "Wyld King's Wrath"
+            }
+        ],
+        "featureTable": null
+
+    },
+    {
+        "id": "core.subclasses.skirmisher",
+        "name": "The Skirmisher",
+        "flavour": "",
+        "description": "",
+        "baseclass": "core.baseclasses.hunter",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.fancyfootwork",
+                "name": "Fancy Footwork"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.momentum",
+                "name": "Momentum"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.cloakofnature",
+                "name": "Cloak of Nature"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.roadslesstraveled",
+                "name": "Roads Less Traveled"
+            }
+        ],
+        "featureTable": null
+
+    },
+    {
+        "id": "core.subclasses.witch",
+        "name": "The Witch",
+        "flavour": "Hexes, Curses, a Mental Assault",
+        "description": "Subclass focusing on debuffing individual targets.",
+        "baseclass": "core.baseclasses.scholar",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.hexmaster",
+                "name": "Hex Master"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.accursedaftershock",
+                "name": "Accursed Aftershock"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.twinhex",
+                "name": "Twin Hex"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.masterofcurses",
+                "name": "Master of Curses"
+            }
+        ],
+        "featureTable": null
+
+    },
+    {
+        "id": "core.subclasses.alchemist",
+        "name": "The Alchemist",
+        "flavour": "",
+        "description": "",
+        "baseclass": "core.baseclasses.scholar",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.alchemicalartisan",
+                "name": "Alchemical Artisan"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.sideeffects",
+                "name": "Side Effects"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.fielddistillery",
+                "name": "Field Distillery"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.secretingredient",
+                "name": "Secret Ingredient"
+            }
+        ],
+        "featureTable":{
+            "name": "Alchemical Concoctions", 
+            "table": [
+                ["Name", "Effect", "Action", "Empowered"],
+                ["Venomous Kiss", "Gain the Throw Venomous Kiss Action", "Throw Venomous Kiss-1AP, Alchemical Concoction: Choose an adjacent non-disengaged section. For 2 rounds, make a magic attack against all characters who start their turns in that section. On a hit, they are hindered until the start of their next turn.", "Characters who are hit are also poisoned."],
+                ["Wyld Catalyst", "Gain the Throw Wyld Catalyst Action", "Throw Wyld Catalyst-1AP, Alchemical Concoction: Make a ranged attack against an ally or enemy in an adjacent non-disengaged section, allies can choose to let you hit them. On a hit trigger all effects that would occur at the start and end of their turn(such as status effects.)", "Wyld Catalyst applies to every character in the adjacent non-disengaged section."],
+                ["Dazzling Compound", "Gain the Throw Dazzling Compound Action", "Throw Dazzling Compound-1AP, Alchemical Concoction: Make a ranged attack against a character in an adjacent non-disengaged section. On a hit they are slowed and dazed.", "The character is also Snared and Exposed"],
+                ["Energizing Tincture", "Gain the Administer Energizing Tincture Action", "Administer Energizing Tincture-2AP, Alchemical Concoction: Choose an ally in the same section as you. For their next 3 turns, they gain an additional 1 AP at the start of their turn.", "The character gains 2AP instead of 1."],
+                ["Paralyzing Poison", "Gain the Administer Paralyzing Poison Action. You may only take one Paralyzing Extract per Expedition", "Administer Paralyzing Poison-2AP, Alchemical Concoction: Make a melee attack against an enemy in the same section as you. On a hit, they are stunned until the end of their next turn.", "The character is stunned for 2 turns instead of 1"],
+                ["Oil of Improvement", "Outside of combat, you may apply this to a weapon you or one of your allies is carrying. This weapon has +1 accuracy on its attack rolls.", "", ""],
+                ["Oil of Weightlessness", "At the beginning of the expedition, you may apply this to any object with a weight value greater than 0. Reduce that objects weight value by 1.", "", ""]
+            ]
+        }
+
+    },
+    {
+        "id": "core.baseclasses.tinkerer",
+        "name": "The Tinkerer",
+        "description": "",
+        "flavour": "",
+        "baseclass": "",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 2,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 3,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 4,
+                "id": "",
+                "name": ""
+            }
+        ],
+        "featureTable": null
+    },
+    {
+        "id": "core.subclasses.wallwarden",
+        "name": "The Wall Warden",
+        "description": "Subclass focused on defensive ward abilities.",
+        "flavour": "Standing, watching, protecting",
+        "baseclass": "core.baseclasses.preacher",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.blessingofbrick",
+                "name": "Blessing of Brick"
+            },
+            {
+                "level": 2,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 3,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 4,
+                "id": "",
+                "name": ""
+            }
+        ],
+        "featureTable": null
+    },
+    {
+        "id": "core.subclasses.harvester",
+        "name": "The Harvester",
+        "description": "Subclass focused on buffs and stamina support.",
+        "flavour": "Food Brings Life",
+        "baseclass": "core.baseclasses.preacher",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.bountifulharvest",
+                "name": "Bountiful Harvest"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.withdeathcomeslife",
+                "name": "With Death Comes Life"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.sowground",
+                "name": "Sow Ground"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.guardianangel",
+                "name": "Guardian Angel"
+            }
+        ],
+        "featureTable": null
+    },
+    {
+        "id": "core.subclasses.oracle",
+        "name": "The Oracle",
+        "description": "Subclass focused on manipulating dice rolls.",
+        "flavour": "The Stars See All",
+        "baseclass": "core.baseclasses.preacher",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.foresight",
+                "name": "Foresight"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.steelforecast",
+                "name": "Steel Forecast"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.trickvisions",
+                "name": "Trick Visions"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.weavefate",
+                "name": "Weave Fate"
+            }
+        ],
+        "featureTable": null
+    },
+    {
+        "id": "core.subclasses.brute",
+        "name": "The Brute",
+        "description": "Subclass focusing on breaking through the front lines and dragging helpless ranged characters into the clash.",
+        "flavour": "A Grip of Iron",
+        "baseclass": "core.baseclasses.warrior",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.vicegrip",
+                "name": "Vice Grip"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.terrifyingpresence",
+                "name": "Terrifying Presence"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.brutalcharge",
+                "name": "Brutal Charge"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.abduction",
+                "name": "Abduction"
+            }
+        ],
+        "featureTable": null
+    },
+    {
+        "id": "core.subclasses.duelist",
+        "name": "The Duelist",
+        "description": "",
+        "flavour": "A glint of steel, a spray of blood.",
+        "baseclass": "core.baseclasses.warrior",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.relentlessassault",
+                "name": "Relentless Assault"
+            },
+            {
+                "level": 2,
+                "id": "core.abilities.hawkishvigilance",
+                "name": "Hawkish Vigilance"
+            },
+            {
+                "level": 3,
+                "id": "core.abilities.bloodrush",
+                "name": "Blood Rush"
+            },
+            {
+                "level": 4,
+                "id": "core.abilities.stormofsteel",
+                "name": "Storm of Steel"
+            }
+        ],
+        "featureTable": null
+    },
+    {
+        "id": "core.subclasses.strategist",
+        "name": "The Strategist",
+        "description": "",
+        "flavour": "Battles need minds just as much as blades.",
+        "baseclass": "core.baseclasses.warrior",
+        "abilities": [
+            {
+                "level": 1,
+                "id": "core.abilities.markfordeath",
+                "name": "Mark For Death"
+            },
+            {
+                "level": 2,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 3,
+                "id": "",
+                "name": ""
+            },
+            {
+                "level": 4,
+                "id": "",
+                "name": ""
+            }
+        ],
+        "featureTable": null
+    }
+
 ]

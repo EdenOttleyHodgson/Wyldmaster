@@ -102,7 +102,7 @@
                 </table>
             </div>
             <div style="width: 100.2%; height: 70%; display: flex; margin: 0 !important; justify-content: space-between;">
-                <div style="border: 1px solid black; width: 100%;">
+                <div style="width: 100%;">
                     <h3 style="text-align: center;">Weapons</h3>
                     <table style="height: 40%;">
                         <tr>
@@ -259,10 +259,66 @@
         
     </div>
     <div class="printable">
-        glaggle
+        <h3 style="text-align: center;">Abilities</h3>
+        <div style="height: 50%; display:flex; flex-flow: row wrap; justify-content: center; align-items: center" class="bottom-border">
+            {#each Array.from(Array(12).keys()) as _}                
+                <div class="abilitydiv">
+                    <div class="bottom-border" style="height: 20%;">Name:</div>
+                    <div>Effect:</div>
+                </div>
+            {/each}
+        </div>
+        <div style="height: 50%; display:flex; align-items:center; flex-direction: column">
+            <h3>Inventory</h3>
+            <div style="width: 100%; height: 100%; display: flex">
+                <div style="width: 100%; margin: -0.5mm; align-items: center">
+                    <div style="text-align: center;">
+                        Load:
+                    </div>
+                    <div style="display: flex; flex-flow: row wrap; align-items: center; justify-content: center">
+                        {#each Array.from(Array(10).keys()) as _}                
+                            <div class="loadbox">
+                            </div>
+                        {/each}
+                        <div style="border-left: 1px solid black; height: 12px"></div>
+                        {#each Array.from(Array(10).keys()) as _}                
+                            <div class="loadbox">
+                            </div>
+                        {/each}
+                    </div>
+                    <div style="height: 88%; display: flex; justify-content:center;">
+                        <table style="width: 95%;">
+                            <tr>
+                                <th style="width: 25%;">Name</th>
+                                <th style="width: 80%;">Effect</th>
+                                <th>Load</th>
+                            </tr>
+                            {#each Array.from(Array(10).keys()) as _}
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {/each}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="printable">
-        glaggle
+        <h3 style="text-align: center">Actions</h3>
+        <div style="display: flex; flex-flow: row wrap; height: 100%; justify-content: center">
+            {#each Array.from(Array(27).keys()) as _}
+                <div class="action-box">
+                    <div style="display: flex; height: 20%;" class="bottom-border">
+                        <div style="border-right: 1px solid black; width: 80%">Name:</div>
+                        <div>AP:</div>
+                    </div>
+                    <div>&nbsp Effect:</div>
+                </div>
+            {/each}
+        </div>
     </div>
     <div class="printable">
         glaggle
@@ -291,8 +347,6 @@
         /* zoom: 75%; */
         width: 100% !important;
         height: 300mm !important;
-        color-adjust: exact !important;
-        -webkit-print-color-adjust: exact !important;
         border: 0mm solid black !important;
         box-sizing:content-box !important;
         page-break-after: page !important;
@@ -316,8 +370,6 @@
         /* zoom: 75%; */
         width: 100% !important;
         height: 300mm !important;
-        color-adjust: exact !important;
-        -webkit-print-color-adjust: exact !important;
         border: 1mm solid black;
         box-sizing:content-box !important;
         page-break-after: page !important;
@@ -381,5 +433,22 @@
     th, td, table{
         border: 1px solid black;
         border-collapse: collapse
+    }
+    .abilitydiv{
+        border: 1px solid black;
+        height: 20%;
+        width: 30%;
+        font-size: xx-small;
+    }
+    .loadbox {
+        border: 1px solid black;
+        width: 10px;
+        height: 10px;
+    }
+    .action-box{
+        border: 1px solid black;
+        height: 100px;
+        width: 250px;
+        font-size: xx-small;
     }
 </style>

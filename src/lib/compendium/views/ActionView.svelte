@@ -5,7 +5,7 @@
     <p>AP: {item.apcost}</p>
     {#each item.tags as tag }
         <h3>Tags:</h3>
-        <ItemSelector id={tag} compType="TAGS" on:ItemSelected/>       
+        <ItemSelector id={tag.id} compType="TAGS" on:ItemSelected/>       
     {/each}
     {#if item.source.id != "universal" && item.source.sourceType}
         <h3>Source:</h3>
@@ -29,8 +29,6 @@
     onMount(async () => {
         compendium = await getCompendium()
         item = compendium.actionStore.getItem(itemID)
-        console.log(compendium.actionStore)
-        console.log(item)
     })
 </script>
 

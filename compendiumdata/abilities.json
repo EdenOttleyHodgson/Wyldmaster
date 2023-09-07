@@ -42,5 +42,588 @@
             "id": "core.subclasses.wall", 
             "sourceType":"SUBCLASSES"
         }
-    }
+    },
+    {
+        "id": "core.abilities.battlehymn",
+        "name": "Battle Hymn",
+        "effect": "Gain the Battle Hymn Action, and two hymn options of your choice.",
+        "actions": ["core.actions.battlehymn"],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.paladin",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.rallyingcry",
+        "name": "Rallying Cry",
+        "effect": "Gain the Rallying Cry Action",
+        "actions": ["core.actions.rallyingcry"],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.paladin",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.commandingvoice",
+        "name": "Commanding Voice",
+        "effect": "Gain another hymn option. When you begin a hymn, choose an ally in the same section as you. They gain the focused effect until the end of their next turn.",
+        "actions": [],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.paladin",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.purifyingaria",
+        "name": "Purifying Aria",
+        "effect": "Gain the Purifying Aria Action",
+        "actions": ["core.actions.purifyingaria"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.paladin",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.viciousattack",
+        "name": "Vicious Attack",
+        "effect": "After repositioning from the Clash into an enemy ranged zone, your next Weapon Attack action is reduced by 1 AP.",
+        "actions": [],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.vanguard",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.furiousspeed",
+        "name": "Furious Speed",
+        "effect": "After repositioning from the Clash into an enemy ranged zone, your next Weapon Attack action is reduced by 1 AP.",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.vanguard",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.linebreaker",
+        "name": "Line Breaker",
+        "effect": "After you reposition into an enemy ranged section from The Clash, all enemies within The Clash have +1 difficulty on Interdiction checks until the end of your next turn.",
+        "actions": [],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.vanguard",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.shatteringcharge",
+        "name": "Shattering Charge",
+        "effect": "Gain the Shattering Charge Action",
+        "actions": ["core.actions.shatteringcharge"],
+        "level": 4,
+        "source": {
+            "id": "core.abilities.vanguard",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.knifeinthedark",
+        "name": "Knife in the Dark",
+        "effect": "If there are no Engaging characters in your current section, your melee attacks gain +1 accuracy.",
+        "actions": [],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.assassin",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.redsmile",
+        "name": "Red Smile",
+        "effect": "You gain +1 Accuracy with attacks against fatigued targets.",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.assassin",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.swiftshadow",
+        "name": "Swift Shadow",
+        "effect": "Upon killing a target, you may choose to immediately enter the Flanks.",
+        "actions": [],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.assassin",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.finishingtouch",
+        "name": "Finishing Touch",
+        "effect": "Gain the Finishing Touch Action",
+        "actions": ["core.actions.finishingtouch"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.assassin",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.deeppockets",
+        "name": "Deep Pockets",
+        "effect": "You may take 1 extra weights worth of Excursion Equipment.",
+        "actions": [],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.handyman",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.craftsmanstouch",
+        "name": "Craftsman's Touch",
+        "effect": "At the start of combat, choose a weapon carried by you or one of your allies. Apply one of these equipment tags to it: Fast, Heavy or Crushing",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.handyman",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.quickfingers",
+        "name": "Quick Fingers",
+        "effect": "Once per turn, you may reduce the cost of an action granted to you by a piece of Excursion Equipment by 1 AP.",
+        "actions": [],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.handyman",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.masterimproviser",
+        "name": "Master Improviser",
+        "effect": "Gain the Craft Equipment Action",
+        "actions": ["core.actions.craftequipment"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.handyman",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.prepareshot",
+        "name": "Prepare Shot",
+        "effect": "Gain the Prepare Shot Action",
+        "actions": ["core.actions.prepareshot"],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.sniper",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.rangingshots",
+        "name": "Ranging Shots",
+        "effect": "When you miss a ranged attack against an enemy, your next attack against that enemy has +1 accuracy.",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.sniper",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.maimingshot",
+        "name": "Maiming Shot",
+        "effect": "When you hit with a prepared shot, you may choose to not deal any damage and instead apply either the dazed or slowed status effect.",
+        "actions": [],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.sniper",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.heartseekingshot",
+        "name": "Heart Seeking Shot",
+        "effect": "Gain the Heart Seeking Shot Action",
+        "actions": ["core.actions.heartseekingshot"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.sniper",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.stepofthewyld",
+        "name": "Step of the Wyld",
+        "effect": "Gain the Step of the Wyld Action",
+        "actions": ["core.actions.stepofthewyld"],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.wyldling",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.thornwreath",
+        "name": "Thorn Wreath",
+        "effect": "Enemies treat the section you currently occupy as Thorny.",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.wyldling",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.masteroftheearth",
+        "name": "Master of the Earth",
+        "effect": "Gain the Manipulate the Wyld Action",
+        "actions": ["core.actions.manipulatethewyld"],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.wyldling",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.natureswrath",
+        "name": "Nature's Wrath",
+        "effect": "Gain the Nature's Wrath Action",
+        "actions": ["core.actions.natureswrath", "core.actions.recastnatureswrath"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.wyldling",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.fancyfootwork",
+        "name": "Fancy Footwork",
+        "effect": "After hitting a character you are Skirmishing with, you may choose to deal no damage to instead cause them to fail any contested Outmaneuver checks against you until the end of their next turn.",
+        "actions": [],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.skirmisher",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.momentum",
+        "name": "Momentum",
+        "effect": "After hitting a character you are Skirmishing with, you may choose to deal no damage to instead cause them to fail any contested Outmaneuver checks against you until the end of their next turn.",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.skirmisher",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.cloakofnature",
+        "name": "Cloak of Nature",
+        "effect": "If you start your turn in the Flanks, restore 1 stamina.",
+        "actions": [],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.skirmisher",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.roadslesstraveled",
+        "name": "Roads Less Traveled",
+        "effect": "Gain the Roads Less Traveled Action",
+        "actions": ["core.actions.roadslesstraveled"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.skirmisher",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.hexmaster",
+        "name": "Hex Master",
+        "effect": "Gain the Hex Action",
+        "actions": ["core.actions.hex"],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.witch",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.accursedaftershock",
+        "name": "Accursed Aftershock",
+        "effect": "After a character cleanses the Hexed condition that you have applied, they take 1 damage.",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.witch",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.twinhex",
+        "name": "Twin Hex",
+        "effect": "You may now have two Hexes active at the same time.",
+        "actions": [],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.witch",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.masterofcurses",
+        "name": "Master of Curses",
+        "effect": "Gain the Overwhelming Curse Action",
+        "actions": ["core.actions.overwhelmingcurse"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.witch",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.alchemicalartisan",
+        "name": "Alchemical Artisan",
+        "effect": "At the beginning of an expedition, pick 3 items from the Alchemical Concoctions list and add them to your inventory. Additionally, when you make a melee or ranged attack with an action that has the Alchemical Concoction tag, you may instead use your Magical Proficiency.",
+        "actions": [],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.alchemist",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.sideeffects",
+        "name": "Side Effects",
+        "effect": "When you affect a character with an Alchemical Concoction they either restore 1 Stamina if they are an ally, or take 1 Damage if they are an enemy.",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.alchemist",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.fielddistillery",
+        "name": "Field Distillery",
+        "effect": "Gain the Field Distillation action",
+        "actions": ["core.actions.fielddistillation"],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.alchemist",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.secretingredient",
+        "name": "Secret Ingredient",
+        "effect": "Gain the Add Secret Ingredient Action",
+        "actions": ["core.actions.addsecretingredient"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.alchemist",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.blessingofbrick",
+        "name": "Blessing of Brick",
+        "effect": "You may use the guard reaction when an ally is attacked instead, but you may only consume a maximum of 2 AP",
+        "actions": [],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.wallwarden",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.bountifulharvest",
+        "name": "Bountiful Harvest",
+        "effect": "Gain the Bountiful Harvest Action",
+        "actions": ["core.actions.bountifulharvest"],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.harvester",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.withdeathcomeslife",
+        "name": "With Death Comes Life",
+        "effect": "Whenever an enemy is killed, gain a stack of With Death Comes Life. Gain the With Death Comes Life action.",
+        "actions": ["core.actions.withdeathcomeslife"],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.harvester",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.sowground",
+        "name": "Sow Ground",
+        "effect": "Gain the Sow Ground Action",
+        "actions": ["core.actions.sowground"],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.harvester",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.guardianangel",
+        "name": "Guardian Angel",
+        "effect": "Gain the Guardian Angel Action",
+        "actions": ["core.actions.guardianangel"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.harvester",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.foresight",
+        "name": "Foresight",
+        "effect": "Gain the Foresight Action",
+        "actions": ["core.actions.foresight"],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.oracle",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.steelforecast",
+        "name": "Steel Forecast",
+        "effect": "Gain the Steel Forecast Action",
+        "actions": ["core.actions.steelforecast"],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.oracle",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.trickvisions",
+        "name": "Trick Visions",
+        "effect": "Gain the Trick Visions Action",
+        "actions": ["core.actions.trickvisions"],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.oracle",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.weavefate",
+        "name": "Weave Fate",
+        "effect": "Gain the Weave Fate action.",
+        "actions": ["core.actions.weavefate"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.oracle",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.vicegrip",
+        "name": "Vice Grip",
+        "effect": "Your Grapple action costs 1AP instead of 2AP.",
+        "actions": [],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.brute",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.terrifyingpresence",
+        "name": "Terrifying Presence",
+        "effect": "You always have the Engaging effect.",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.brute",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.brutalcharge",
+        "name": "Brutal Charge",
+        "effect": "Gain +1 Accuracy on checks to reposition while Interdicted.",
+        "actions": [],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.brute",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.abduction",
+        "name": "Abduction",
+        "effect": "Gain the Abduction Action",
+        "actions": ["core.actions.abduction"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.brute",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.relentlessassault",
+        "name": "Relentless Assault",
+        "effect": "When you attack a character, the rest of your attacks that turn against that character gain +1 accuracy. This stacks infinitely.",
+        "actions": [],
+        "level": 1,
+        "source": {
+            "id": "core.subclasses.duelist",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.hawkishvigilance",
+        "name": "Hawkish Vigilance",
+        "effect": "Enemies who are currently Skirmishing with you have +1 difficulty on their outmaneuver checks.",
+        "actions": [],
+        "level": 2,
+        "source": {
+            "id": "core.subclasses.duelist",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.bloodrush",
+        "name": "Blood Rush",
+        "effect": "Dealing wound damage to a character cleanses fatigued and restores 1 stamina.",
+        "actions": [],
+        "level": 3,
+        "source": {
+            "id": "core.subclasses.duelist",
+            "sourceType": "SUBCLASSES"
+        }
+    },
+    {
+        "id": "core.abilities.stormofsteel",
+        "name": "Storm of Steel",
+        "effect": "Gain the Storm of Steel Action",
+        "actions": ["core.actions.Storm Of Steel"],
+        "level": 4,
+        "source": {
+            "id": "core.subclasses.duelist",
+            "sourceType": "SUBCLASSES"
+        }
+    }    
 ]

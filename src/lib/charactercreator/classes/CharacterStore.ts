@@ -1,14 +1,13 @@
-import { invoke } from "@tauri-apps/api/tauri";
+
+import {invoke} from "$lib/tauriFix"
 import { Character, type StaticInfo } from "./CharacterClass";
 import { getCompendium, load_compendium_data } from "$lib/compendium/compendiumloader";
-import { appLocalDataDir } from "@tauri-apps/api/path";
-
 let characterStore: Character[] = []
 let loaded: boolean = false;
 
 export async function load_characters() {
     characterStore = []
-    let loadedChars = await invoke("load_all_characters", {dataDir: await appLocalDataDir()}) as string[]
+    let loadedChars = await invoke("load_all_characters") as string[]
     let compendium = await getCompendium()
     Character.compendium = compendium
     loadedChars.forEach((unparsedData) => {
@@ -33,6 +32,6 @@ export function getCharacterById(id: string): Character | undefined {
 
 
 export async function saveCharacter(character: Character){
-    await invoke("save_character", {characterInfo: character.staticInfo, id:character.staticInfo.id, dataDir: await appLocalDataDir()})
+    await invoke("save_character", {characterInfo: character.staticInfo, id:character.staticInfo.id})
     await load_characters()
 }

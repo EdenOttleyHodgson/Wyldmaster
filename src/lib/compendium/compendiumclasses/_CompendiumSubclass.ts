@@ -11,6 +11,12 @@ export interface CompendiumSubclass extends CompendiumObject {
             name: string
         }
     ],
-    featureTable: [] | null
+    featureTable: FeatureTable | null
+
+}
+
+export interface FeatureTable {
+    name: string
+    table: string[][]
 
 }

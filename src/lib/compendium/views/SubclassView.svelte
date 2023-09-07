@@ -11,7 +11,7 @@
         {/each}
     </div>
     {#if item.featureTable}
-        <p>TODO: Render Feature Tables</p>
+        <FeatureTableView featureTable={item.featureTable}/>
     {/if}
     <p>Base Class</p>
     <ItemSelector id={item.baseclass} compType="BASECLASSES" on:ItemSelected/>
@@ -22,13 +22,20 @@
     import type { CompendiumSubclass } from "$lib/compendium/compendiumclasses";
     import DetailedItemView from "../DetailedItemView.svelte";
     import ItemSelector from "../ItemSelector.svelte";
+    import FeatureTableView from "./FeatureTableView.svelte";
 
     export let itemID: string
     let item: CompendiumSubclass | undefined
     let compendium: Compendium
+    let featureTableHeaders: string[]
+    let featureTableContents: string[][]
     onMount(async () => {
         compendium = await getCompendium()
         item = compendium.subclassStore.getItem(itemID)
+        if(item?.featureTable){
+            featureTableHeaders = item.featureTable.table[0]
+            featureTableContents = item.featureTable.table.slice(1)
+        }
     })
 
 </script>

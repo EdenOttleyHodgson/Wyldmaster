@@ -1,8 +1,7 @@
-import { invoke } from "@tauri-apps/api/tauri"
+import {invoke} from "$lib/tauriFix"
 import type { CompendiumType } from "$lib/compendium/CompendiumType"
 import { type CompendiumBaseClass, type CompendiumExcursionEquipment,  type CompendiumCombatGear,  type CompendiumTag,  type CompendiumAbility,  type CompendiumSubclass, type CompendiumAction, CompendiumStore, type CompendiumObject } from "$lib/compendium/compendiumclasses"
 import { Character } from "$lib/charactercreator/classes/CharacterClass"
-import { appLocalDataDir } from '@tauri-apps/api/path';
 let compendium: Compendium
 export class Compendium{
     actionStore!: CompendiumStore<CompendiumAction>
@@ -82,9 +81,7 @@ interface recieved_data{
     data: string
 }
 export async function load_compendium_data() {
-    const appLocalDataDirPath = await appLocalDataDir();
-    console.log(appLocalDataDirPath)
-    const data = await invoke("load_compendium_data", {dataDir: appLocalDataDirPath}) as recieved_data[]
+    const data = await invoke("load_compendium_data") as recieved_data[]
     console.log(data)
     compendium = new Compendium(data)
 }

@@ -20,11 +20,68 @@
         "stats": {
             "stamina": 6,
             "meleeprof": 3,
-            "rangedprof": 0,
+            "rangedprof": 1,
             "magicprof": 0,
             "dodge": 14,
             "resilience": 8,
             "magicdef": 12
+        }
+    },
+    {
+        "id": "core.baseclasses.hunter",
+        "name": "The Hunter",
+        "description": "",
+        "stats": {
+            "stamina": 6,
+            "meleeprof": 0,
+            "rangedprof": 3,
+            "magicprof": 0,
+            "dodge": 14,
+            "resilience": 10,
+            "magicdef": 10
+        }
+    },
+
+    {
+        "id": "core.baseclasses.scholar",
+        "name": "The Scholar",
+        "description": "",
+        "stats": {
+            "stamina": 6,
+            "meleeprof": 0,
+            "rangedprof": 1,
+            "magicprof": 4,
+            "dodge": 12,
+            "resilience": 8,
+            "magicdef": 16
+        }
+    },
+    {
+        "id": "core.baseclasses.preacher",
+        "name": "The Preacher",
+        "description": "",
+        "stats": {
+            "stamina": 7,
+            "meleeprof": 1,
+            "rangedprof": 1,
+            "magicprof": 3,
+            "dodge": 10,
+            "resilience": 13,
+            "magicdef": 13
+        }
+    },
+    {
+        "id": "core.baseclasses.warrior",
+        "name": "The Warrior",
+        "description": "",
+        "stats": {
+            "stamina": 8,
+            "meleeprof": 4,
+            "rangedprof": 2,
+            "magicprof": -2,
+            "dodge": 12,
+            "resilience": 12,
+            "magicdef": 8
         }
     }
 

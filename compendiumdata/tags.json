@@ -51,12 +51,24 @@
         "id": "core.tags.rangedweapon",
         "name": "Ranged Weapon",
         "description": "Weapon attacks using this weapon use ranged efficiency.",
-        "value": null
+        "value": false
     },   
     {
         "id": "core.tags.nimble",
         "name": "Nimble",
         "description": "not done yet",
-        "value": null
+        "value": false
+    },
+    {
+        "id": "core.tags.perexpedition",
+        "name": "Per Expedition",
+        "description": "This action can only be taken X times per Expedition",
+        "value": true
+    },
+    {
+        "id": "core.tags.percombat",
+        "name": "Per Combat",
+        "description": "This action can only be taken X times per Combat",
+        "value": true
     }
 ]

@@ -119,16 +119,18 @@
 			}}
         >
             
-            <div style="align-content: center">
+            <div style="height: 90vh; width:90vw; overflow-y: scroll">
                 <div class="inventory-add-buttonbar">
                     <button on:click={() => CombatGearOrEquipment = "COMBATGEAR"}>Combat Gear</button>
                     <button on:click={() => CombatGearOrEquipment = "EXCURSIONEQUIPMENT"}>Excurstion Equipment</button>
                 </div>
-                {#if CombatGearOrEquipment === "COMBATGEAR"}
-                    <CompendiumView compendiumType = {"COMBATGEAR"} on:ItemSelected = {updateItemToAdd}/>
-                {:else if CombatGearOrEquipment === "EXCURSIONEQUIPMENT"}
-                    <CompendiumView compendiumType = {"EXCURSIONEQUIPMENT"} on:ItemSelected ={updateItemToAdd}/>
-                {/if}
+                <div style="height: 50%">
+                    {#if CombatGearOrEquipment === "COMBATGEAR"}
+                        <CompendiumView compendiumType = {"COMBATGEAR"} on:ItemSelected = {updateItemToAdd}/>
+                    {:else if CombatGearOrEquipment === "EXCURSIONEQUIPMENT"}
+                        <CompendiumView compendiumType = {"EXCURSIONEQUIPMENT"} on:ItemSelected ={updateItemToAdd}/>
+                    {/if}
+                </div>
                 <div class="inventory-add-buttonbar">
                     <button on:click={addItemToInventory}>Add Selected Item To Inventory</button>
                     <button on:click={() => showingInventoryAddScreen = false}>Cancel</button>

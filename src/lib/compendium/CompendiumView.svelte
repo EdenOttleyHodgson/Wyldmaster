@@ -50,7 +50,7 @@
 
 
 {#if currentItems }
-<div style="display: flex" class="height: 90vw">
+<div style="display: flex; height: 100vh">
     <div>
         {#if currentItems}
         <div class="menudiv item-selectors">
@@ -78,13 +78,16 @@
 <style>
     .menudiv{
         margin: 5px;
+        overflow-y: scroll;
+        height: 85%;
+        border: 1px solid black;
     }
     .item-selectors{
         width: 20vw;
+    
     }
     .item-view{
         width: 80vw;
-        border: 5px solid black
-
+        border: 5px solid black;
     }
 </style>

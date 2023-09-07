@@ -58,6 +58,329 @@
             "id": "core.abilities.standfast", 
             "sourceType":"ABILITIES"
         }
+    },
+ {
+    "id": "core.actions.battlehymn",
+    "name": "Battle Hymn",
+    "flavour": "",
+    "effect": "Begin singing a battle hymn. When you take this action, choose a hymn option you have unlocked to use. Using the same hymn increases its effect. The effects of the hymn last until your turn ends and you do not take this action.",
+    "apcost": 1,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.battlehymn",
+      "sourceType": "ABILITIES"
     }
-
+  },
+  {
+    "id": "core.actions.rallyingcry",
+    "name": "Rallying Cry",
+    "flavour": "",
+    "effect": "All allies with the fatigued effect in your section cleanse fatigued and restore 1 stamina.",
+    "apcost": 2,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.rallyingcry",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.purifyingaria",
+    "name": "Purifying Aria",
+    "flavour": "",
+    "effect": "All allies restore 2 stamina and may take the Cleanse Self acti",
+    "apcost": 2,
+    "tags": [{"id:": {"id": "core.tags.feat"}}],
+    "source": {
+      "id": "core.abilities.purifyingaria",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.shatteringcharge",
+    "name": "Shattering Charge",
+    "flavour": "",
+    "effect": "Instantly trigger the forward movement of the Clash.",
+    "apcost": 3,
+    "tags": [{"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.shatteringcharge",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.finishingtouch",
+    "name": "Finishing Touch",
+    "flavour": "",
+    "effect": "Instantly deal 5 wounds to a Fatigued character",
+    "apcost": 3,
+    "tags": [{"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.finishingtouch",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.craftequipment",
+    "name": "Craft Equipment",
+    "flavour": "",
+    "effect": "Choose any piece of equipment from the Excursion Equipment List. You instantly add this piece of equipment to your inventory. This piece of equipment always has 0 weight.",
+    "apcost": 2,
+    "tags": [{"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.masterimproviser",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.prepareshot",
+    "name": "Prepare Shot",
+    "flavour": "",
+    "effect": "Choose an enemy in range of one of your ranged weapons. Your next ranged attack against this enemy has +1 accuracy.",
+    "apcost": 1,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.prepareshot",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.heartseekingshot",
+    "name": "Heart Seeking Shot",
+    "flavour": "",
+    "effect": "The next ranged attack that hits an enemy deals an additonal one wound, whether the enemy is Fatigued or not.",
+    "apcost": 2,
+    "tags": [{"id":"core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.heartseekingshot",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.stepofthewyld",
+    "name": "Step of the Wyld",
+    "flavour": "",
+    "effect": "Until the end of your turn, you ignore all terrain tags, excluding Inaccessible.",
+    "apcost": 1,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.stepofthewyld",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.manipulatethewyld",
+    "name": "",
+    "flavour": "",
+    "effect": "Add any terrain tag to any section until the end of your next turn, excluding Inaccessible.",
+    "apcost": 3,
+    "tags": [{"id": "core.tags.percombat", "value": 1}],
+    "source": {
+      "id": "core.abilities.masteroftheearth",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.natureswrath",
+    "name": "Nature's Wrath",
+    "flavour": "",
+    "effect": "Choose a non-disengaged section. All enemy characters in that section take two damage and are Snared until the end of your next turn. You may reapply this effect for 2AP targeting the same section as long as you do not end your turn without taking this action.",
+    "apcost": 3,
+    "tags": [{"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.natureswrath",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.recastnatureswrath",
+    "name": "Recast Nature's Wrath",
+    "flavour": "",
+    "effect": "All enemies in the section marked by Nature's Wrath take 2 damage and are Snared until the end of their next turn.",
+    "apcost": 2,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.natureswrath",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.roadslesstraveled",
+    "name": "Roads Less Traveled",
+    "flavour": "",
+    "effect": "Choose a Non-Disengaged Section, you instantly appear there and regain 4 AP.",
+    "apcost": 3,
+    "tags": [{"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.roadslesstraveled",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.hex",
+    "name": "Hex",
+    "flavour": "",
+    "effect": "Make a magic attack against an enemy within medium range. On a hit, the target gains the Hexed condition and is inflicted with a debuff from the Hexes list while they have this condition. The target may only cleanse this condition with the Remove Hex action. You may only have one Hex active at a time, and if you apply another, the original target cleanses the Hexed condition.",
+    "apcost": "X",
+    "tags": [],
+    "source": {
+      "id": "core.abilities.hexmaster",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.overwhelmingcurse",
+    "name": "Overwhelming Curse",
+    "flavour": "",
+    "effect": "Make a magic attack against an enemy within medium range. On a hit, the target gains the Hexed condition and is inflicted with a debuff from the Hexes list while they have this condition. The target may only cleanse this condition with the Remove Hex action. You may only have one Hex active at a time, and if you apply another, the original target cleanses the Hexed condition.",
+    "apcost": 2,
+    "tags": [{"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.masterofcurses",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.fielddistillation",
+    "name": "Field Distillation",
+    "flavour": "",
+    "effect": "Add an Alchemical Concoction to your inventory. If you already have a Paralyzing Poison, you may not add another to your inventory. This action may be taken outside of combat.",
+    "apcost": 4,
+    "tags": [{"id": "core.tags.perexpedition", "value": 2}],
+    "source": {
+      "id": "core.abilities.fielddistillery",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.addsecretingredient",
+    "name": "Add Secret Ingredient",
+    "flavour": "",
+    "effect": "You may use this action when you take an action with the Alchemical Concoction tag. Empower the action you just took.",
+    "apcost": 0,
+    "tags": [{"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.secretingredient",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.bountifulharvest",
+    "name": "Bountiful Harvest",
+    "flavour": "",
+    "effect": "Choose an ally, they restore 1 Stamina",
+    "apcost": 1,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.bountifulharvest",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.withdeathcomeslife",
+    "name": "With Death Comes Life",
+    "flavour": "",
+    "effect": "Grant an ally X AP, where X is the current number of With Death Comes Life Stacks.",
+    "apcost": 1,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.withdeathcomeslife",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.sowground",
+    "name": "Sow Ground",
+    "flavour": "",
+    "effect": "Choose one of your ranged sections. Any allied character who begins their turn in this section restores 1 Stamina. Only one section may have Sow Ground on it at a time.",
+    "apcost": 2,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.sowground",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.guardianangel",
+    "name": "Guardian Angel",
+    "flavour": "",
+    "effect": "Remove a combined total of 4 wounds from all allies.",
+    "apcost": 2,
+    "tags": [{"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.guardianangel",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.foresight",
+    "name": "Foresight",
+    "flavour": "",
+    "effect": "Choose an allied character or yourself and roll a d20. The next time that character rolls a d20, take the roll that was just made instead of rolling the dice again.",
+    "apcost": 1,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.foresight",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.steelforecast",
+    "name": "Steel Forecast",
+    "flavour": "",
+    "effect": "Choose an enemy character. All attacks they make have +1 difficulty until the start of their next turn.",
+    "apcost": 1,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.steelforecast",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.trickvisions",
+    "name": "Trick Visions",
+    "flavour": "",
+    "effect": "Choose an allied character. The next attack made against this character has a 50% chance to miss. This is decided before the attack roll is made.",
+    "apcost": 2,
+    "tags": [],
+    "source": {
+      "id": "core.abilities.trickvisions",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.weavefate",
+    "name": "Weave Fate",
+    "flavour": "",
+    "effect": "Reaction. \n Trigger: A character rolls a D20. \n Effect: You may replace the result of the roll with a result of your choosing. ",
+    "apcost": 0,
+    "tags": [{"id": "core.tags.reaction"}, {"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.weavefate",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.abduction",
+    "name": "Abduction",
+    "flavour": "",
+    "effect": "This action can only be taken while in the clash. Choose an enemy character in the NPC Medium Range section. They are immediately moved into the Clash.",
+    "apcost": 3,
+    "tags": [{"id": "core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.abduction",
+      "sourceType": "ABILITIES"
+    }
+  },
+  {
+    "id": "core.actions.Storm Of Steel",
+    "name": "Storm Of Steel",
+    "flavour": "",
+    "effect": "Until the end of your turn, the AP cost of the Weapon Attack action and the Switch Equipment action is reduced by 1 AP.",
+    "apcost": 1,
+    "tags": [{"id":"core.tags.feat"}],
+    "source": {
+      "id": "core.abilities.stormofsteel",
+      "sourceType": "ABILITIES"
+    }
+  }
 ]

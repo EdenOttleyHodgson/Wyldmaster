@@ -4,7 +4,7 @@
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
     "devPath": "http://localhost:5173",
-    "distDir": "../public"
+    "distDir": "../build"
   },
   "package": {
     "productName": "wyldmaster",
@@ -15,7 +15,20 @@
       "all": false,
       "path": {
         "all": true
+      },
+      "fs": {
+        "all": true,
+        "scope": ["$RESOURCE/**"]
+      },
+      "protocol": {
+        "all": false,
+        "asset": true,
+        "assetScope": ["$RESOURCE/**"]
       }
+    
+    },  
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost"
     },
     "bundle": {
       "active": true,
@@ -41,7 +54,7 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [],
+      "resources": ["assets/*"],
       "shortDescription": "",
       "targets": "all",
       "windows": {
@@ -49,9 +62,6 @@
         "digestAlgorithm": "sha256",
         "timestampUrl": ""
       }
-    },
-    "security": {
-      "csp": null
     },
     "updater": {
       "active": false

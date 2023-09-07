@@ -2,15 +2,18 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use serde::{ser::SerializeStruct, Deserialize};
 use serde_json::{self, Value, json};
+use std::fmt::Display;
 use std::fs::{self, File};
+use std::io::ErrorKind;
 
+use tauri::api::path;
+use tauri::{PathResolver, Config};
 
 
 #[derive(Debug, thiserror::Error)]
 enum Error {
   #[error(transparent)]
-  Io(#[from] std::io::Error)
-
+  Io(#[from] std::io::Error),
 }
 impl serde::Serialize for Error{
   fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
@@ -103,8 +106,9 @@ fn main() {
 }
 
 #[tauri::command]
-fn load_compendium_data(data_dir: &str) -> Result<Vec<CompendiumData>, Error>{
+fn load_compendium_data(app_handle: tauri::AppHandle) -> Result<Vec<CompendiumData>, Error>{
   let mut compendium_data:Vec<CompendiumData> = Vec::new(); 
+  let data_dir = get_data_dir(app_handle).unwrap();
   let compendium_directory = format!("{}/{}",data_dir, "compendiumdata");
   let entries = {
   
@@ -164,7 +168,8 @@ struct CharacterData{
 }
 */
 #[tauri::command]
-fn load_all_characters(data_dir: &str) -> Result<Vec<Value>, Error>{
+fn load_all_characters(app_handle: tauri::AppHandle) -> Result<Vec<Value>, Error>{
+    let data_dir = get_data_dir(app_handle).unwrap_or("".to_owned());
     let directory = format!("{}/{}", data_dir, "characters");
     let entries = {
       let entries = fs::read_dir(&directory);
@@ -206,9 +211,16 @@ fn load_all_characters(data_dir: &str) -> Result<Vec<Value>, Error>{
 
 
 #[tauri::command]
-fn save_character(character_info: Value, id: &str, data_dir: &str) -> Result<(), Error> {
+fn save_character(character_info: Value, id: &str, app_handle: tauri::AppHandle) -> Result<(), Error> {
+    let data_dir = get_data_dir(app_handle).unwrap();
     let character_as_string = serde_json::to_string_pretty(&character_info).unwrap();
     let filename = format!("{}/{}/{}.json", data_dir, "characters", id);
     fs::write(filename, character_as_string)?;
     Ok(()) 
 }
+
+fn get_data_dir(app_handle: tauri::AppHandle) -> Option<String>{
+
+    let data_buf = app_handle.path_resolver().app_local_data_dir().unwrap_or("".into());
+    return Some(data_buf.as_os_str().to_str()?.to_owned())
+} 
