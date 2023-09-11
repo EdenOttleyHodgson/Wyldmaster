@@ -4,13 +4,43 @@
   "classes": [
     {
       "class_id": "core.subclasses.wall",
-      "level": 1,
+      "level": 2,
       "original": true
+    },
+    {
+      "class_id": "core.subclasses.handyman",
+      "level": 2,
+      "original": false
+    },
+    {
+      "class_id": "core.subclasses.assassin",
+      "level": 1,
+      "original": false
+    },
+    {
+      "class_id": "core.subclasses.duelist",
+      "level": 1,
+      "original": false
+    },
+    {
+      "class_id": "core.subclasses.alchemist",
+      "level": 1,
+      "original": false
+    },
+    {
+      "class_id": "core.subclasses.witch",
+      "level": 1,
+      "original": false
     }
   ],
   "id": "dba8bf35-53ca-4e9f-9a73-ecefcf1562dd",
-  "inventory": [],
-  "level": 1,
+  "inventory": [
+    {
+      "compType": "COMBATGEAR",
+      "id": "core.combatgear.longbow"
+    }
+  ],
+  "level": 8,
   "name": "s",
   "notes": "s",
   "player_name": "s"

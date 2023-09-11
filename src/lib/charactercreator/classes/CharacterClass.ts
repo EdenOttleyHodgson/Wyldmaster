@@ -26,7 +26,7 @@ export class Character {
         let className: string = ""
         this.staticInfo.classes.forEach((x) => {
             let currentClass = Character.compendium.subclassStore.getItem(x.class_id)
-            className += currentClass?.name
+            className += currentClass?.name + ":" + x.level + " "
             currentClass?.abilities
                 .filter((ability) => ability.level <= x.level)
                 .forEach(ability => {

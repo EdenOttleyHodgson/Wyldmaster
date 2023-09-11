@@ -83,9 +83,15 @@
     function gotoPrint(){
         if($page) {
             let url = $page.url + "/print"
-            console.log(url)
             goto(url)
         }
+    }
+    function gotoLevelUp() {
+        if($page) {
+            let url = $page.url + "/levelup"
+            goto(url)
+        }
+
     }
 </script>
 
@@ -174,6 +180,7 @@
             <div class="navbar-div">
                 <button on:click={() => saveCharacter(character)}>Save</button>
                 <button on:click={gotoPrint}>Print</button>
+                <button on:click={gotoLevelUp}>Level Up</button>
             </div>
 
         </div>
