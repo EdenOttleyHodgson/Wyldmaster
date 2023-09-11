@@ -83,6 +83,7 @@
     function gotoPrint(){
         if($page) {
             let url = $page.url + "/print"
+            console.log(url)
             goto(url)
         }
     }

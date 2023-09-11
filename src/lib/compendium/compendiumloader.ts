@@ -85,3 +85,15 @@ export async function load_compendium_data() {
     console.log(data)
     compendium = new Compendium(data)
 }
+
+
+export function itemIdArrToItemString(idArr: string[], compType: CompendiumType): string {
+    let itemArr: string[] = []
+    idArr.forEach((id) => {
+        let item = compendium.getGenericItem(id, compType)
+        if(item) {
+            itemArr.push(item.name)
+        }
+    })
+    return itemArr.toString()
+}

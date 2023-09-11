@@ -43,6 +43,6 @@
         {#if newClass}
             <button on:click={finishLevelUp}>Select : {newClass.name}</button>
         {/if}
-        <button on:click={() => goto("characters/" + character.staticInfo.id)}>Cancel</button>
+        <button on:click={() => goto("/characters/" + character.staticInfo.id)}>Cancel</button>
     </div>
 </div>

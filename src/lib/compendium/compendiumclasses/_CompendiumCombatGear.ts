@@ -21,3 +21,10 @@ export interface weaponStats{
         weight: number,
         apcost: number[]
 }
+
+export function isWeapon(stats: armourStats | weaponStats): stats is weaponStats {
+    return 'damage' in stats;
+}
+export function isArmour(stats: armourStats | weaponStats): stats is armourStats {
+    return 'dodge' in stats;
+}

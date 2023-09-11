@@ -38,6 +38,14 @@
     {
       "compType": "COMBATGEAR",
       "id": "core.combatgear.longbow"
+    },
+    {
+      "compType": "COMBATGEAR",
+      "id": "core.combatgear.leatherarmour"
+    },
+    {
+      "compType": "EXCURSIONEQUIPMENT",
+      "id": "core.excursionequipment.antivenom"
     }
   ],
   "level": 8,
