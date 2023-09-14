@@ -1,0 +1,21 @@
+{
+  "appearance": "walrus",
+  "background": "teacher",
+  "classes": [
+    {
+      "class_id": "core.subclasses.witch",
+      "level": 1,
+      "original": true
+    }
+  ],
+  "id": "f99b7715-788a-4b6a-b1bd-c97631c7b413",
+  "inventory": [
+    {
+      "compType": "COMBATGEAR",
+      "id": "core.combatgear.longbow"
+    }
+  ],
+  "level": 1,
+  "name": "Attila The Mum",
+  "player_name": "Mum"
+}
